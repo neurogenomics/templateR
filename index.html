@@ -69,13 +69,13 @@
       </header><div class="row">
   <div class="contents col-md-9">
 
-<img src="https://github.com/neurogenomics/templateR/templateR/raw/master/inst/hex/hex.png" height="300"><br><br><a href="https://github.com/neurogenomics/templateR" class="external-link"><img src="https://img.shields.io/badge/devel%20version-0.99.0-black.svg"></a> <a href="https://github.com/neurogenomics/templateR/actions" class="external-link"><img src="https://github.com/neurogenomics/templateR/workflows/R-CMD-check-bioc/badge.svg" alt="R build status"></a> <a href="https://github.com/neurogenomics/templateR/commits/master" class="external-link"><img src="https://img.shields.io/github/last-commit/neurogenomics/templateR.svg"></a> <a href="https://codecov.io/gh/neurogenomics/templateR" class="external-link"><img src="https://codecov.io/gh/neurogenomics/templateR/branch/master/graph/badge.svg"></a> <a href="https://cran.r-project.org/web/licenses/GPL-3" class="external-link"><img src="https://img.shields.io/badge/license-GPL--3-blue.svg" alt="License: GPL-3"></a>
-<h5>
+<img src="https://github.com/neurogenomics/templateR/raw/master/inst/hex/hex.png" height="300"><br><br><a href="https://github.com/neurogenomics/templateR" class="external-link"><img src="https://img.shields.io/badge/devel%20version-0.99.0-black.svg"></a> <a href="https://github.com/neurogenomics/templateR/actions" class="external-link"><img src="https://github.com/neurogenomics/templateR/workflows/R-CMD-check-bioc/badge.svg" alt="R build status"></a> <a href="https://github.com/neurogenomics/templateR/commits/master" class="external-link"><img src="https://img.shields.io/github/last-commit/neurogenomics/templateR.svg"></a> <a href="https://codecov.io/gh/neurogenomics/templateR" class="external-link"><img src="https://codecov.io/gh/neurogenomics/templateR/branch/master/graph/badge.svg"></a> <a href="https://cran.r-project.org/web/licenses/GPL-3" class="external-link"><img src="https://img.shields.io/badge/license-GPL--3-blue.svg" alt="License: GPL-3"></a>
+<h4>
 Authors: <i>yourGivenName yourFamilyName</i>
-</h5>
-<h5>
+</h4>
+<h4>
 README updated: <i>Dec-17-2021</i>
-</h5>
+</h4>
 <!-- To modify Package/Title/Description/Authors fields, edit the DESCRIPTION file -->
 <p><em>&lt;—(Start of section that can be deleted after forking the template)—&gt;</em></p>
 <div class="section level2">
@@ -87,7 +87,7 @@ README updated: <i>Dec-17-2021</i>
 <strong>DESCRIPTION, vignettes/, tests/, R/, man/, inst/</strong>: Basic skeleton for the package itself.<br>
 </li>
 <li>
-<strong>README.Rmd</strong>: Auto-populates based on the <em>DESCRIPTION</em> file (that can be knit to create <em>README.md</em>).<br>
+<strong>README.Rmd</strong>: Auto-populates based on the <em>DESCRIPTION</em> file (that can be knit to create <em>README.md</em>). Also contains <a href="https://github.com/GuangchuangYu/badger" class="external-link">badges</a> that automatically update themselves.<br>
 </li>
 <li>
 <strong>inst/hex/hexSticker.Rmd</strong>: Template for creating <a href="https://github.com/GuangchuangYu/hexSticker" class="external-link">hex stickers</a>.</li>
@@ -100,14 +100,30 @@ README updated: <i>Dec-17-2021</i>
 <h3 id="github-secrets">GitHub Secrets<a class="anchor" aria-label="anchor" href="#github-secrets"></a>
 </h3>
 <p>Before pushing changes to your new R package, you will need to add two <a href="https://docs.github.com/en/actions/security-guides/encrypted-secrets" class="external-link">GitHub Secrets</a>:</p>
-<ul>
+<ol style="list-style-type: decimal">
 <li>
 <code>PAT_GITHUB</code>: Speeds up installations on GitHub Actions.<br>
 </li>
 <li>
 <code>DOCKER_TOKEN</code>: Allows GitHub Actions to push to the <a href="https://hub.docker.com/orgs/neurogenomicslab" class="external-link">neurogenomicslab DockerHub</a> account.</li>
-</ul>
-<p>Ask a fellow lab member for these tokens.</p>
+</ol>
+<p>^ Ask a fellow <a href="https://www.neurogenomics.co.uk/" class="external-link">Neurogenomics Lab</a> member for these two tokens.</p>
+<ol start="3" style="list-style-type: decimal">
+<li>
+<code>CODECOV_TOKEN</code>: Allows <a href="https://app.codecov.io/" class="external-link">code coverage</a> results to be displayed via the <code><a href="https://rdrr.io/pkg/badger/man/badge_codecov.html" class="external-link">badger::badge_codecov()</a></code> at the top of the <em>README.Rmd</em>. This token is repository-specific,</li>
+</ol>
+<p>^ You can get the <a href="https://app.codecov.io/" class="external-link">Codecov</a> token from <a href="https://app.codecov.io/gh/neurogenomics/templateR" class="external-link">here</a>.</p>
+</div>
+<div class="section level3">
+<h3 id="github-pages">GitHub Pages<a class="anchor" aria-label="anchor" href="#github-pages"></a>
+</h3>
+<p>The <a href="https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions" class="external-link">GitHub Actions</a> workflows included in this template will automatically create a documentation website for your package. This requires several initial setup steps (you only need to do these once per repo):</p>
+<ol style="list-style-type: decimal">
+<li>After <em>check-bioc-docker.yml</em> has successfully run on Ubuntu for the first, a new branch will appear in your repo called “gh-pages”.<br>
+</li>
+<li>In the <strong>Settings</strong> tab of your repo, go to <strong>Pages</strong> on the left. Then under <strong>Source</strong> select <code>"branch: gh-pages"</code> and <code>"root"</code> from the respective dropdown menus. Finally, click the <strong>Save</strong> button.</li>
+</ol>
+<p><em>Note</em>: If you don’t have admin access to your repo, you will need to ask someone who does to change this for you.</p>
 <p><em>&lt;—(End of section that can be deleted after forking the template)—&gt;</em></p>
 </div>
 </div>
@@ -152,7 +168,6 @@ README updated: <i>Dec-17-2021</i>
 <div class="section level2">
 <h2 id="contact">Contact<a class="anchor" aria-label="anchor" href="#contact"></a>
 </h2>
-<p><img src="https://www.neurogenomics.co.uk/author/neurogenomics-lab/avatar_hu361299fcf1f4e263f0b5bac1963703dd_83675_270x270_fill_q90_lanczos_center.jpg" height="100" style="border-radius: 100px"></p>
 <div class="section level3">
 <h3 id="neurogenomics-lab">
 <a href="https://www.neurogenomics.co.uk/" class="external-link">Neurogenomics Lab</a><a class="anchor" aria-label="anchor" href="#neurogenomics-lab"></a>
@@ -160,7 +175,7 @@ README updated: <i>Dec-17-2021</i>
 <p>UK Dementia Research Institute<br>
 Department of Brain Sciences<br>
 Faculty of Medicine<br>
-Imperial College London<br><br><br><a href="https://github.com/neurogenomics" class="external-link">GitHub</a><br><a href="https://hub.docker.com/orgs/neurogenomicslab" class="external-link">DockerHub</a></p>
+Imperial College London<br><a href="https://github.com/neurogenomics" class="external-link">GitHub</a><br><a href="https://hub.docker.com/orgs/neurogenomicslab" class="external-link">DockerHub</a></p>
 </div>
 </div>
 
