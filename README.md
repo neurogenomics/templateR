@@ -41,26 +41,29 @@ easy by providing:
     `citation("<packageName>")`. Also used to auto-populate the
     *README.Rmd*.
 
+To get started, simply click on the green **Use this template** button
+at the top right of the `templateR` repo.
+
 ### GitHub Secrets
 
 Before pushing changes to your new R package, you will need to add two
 [GitHub
 Secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets):
 
-1.  `PAT_GITHUB`: Speeds up installations on GitHub Actions.  
-2.  `DOCKER_TOKEN`: Allows GitHub Actions to push to the
+1.  `PAT_GITHUB`: Speeds up installations and gives access to private
+    repos on GitHub Actions. You can generate your very own Personal
+    Authentication Token using [these
+    instructions](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).  
+2.  `CODECOV_TOKEN`: Allows [code coverage](https://app.codecov.io/)
+    results to be displayed via the `badger::badge_codecov()` at the top
+    of the *README.Rmd*. This [Codecov](https://app.codecov.io/) token
+    is repository-specific and can be found
+    [here](https://app.codecov.io/gh/neurogenomics/templateR).
+3.  `DOCKER_TOKEN`: Allows GitHub Actions to push to the
     [neurogenomicslab
     DockerHub](https://hub.docker.com/orgs/neurogenomicslab) account.
-
-^ Ask a fellow [Neurogenomics Lab](https://www.neurogenomics.co.uk/)
-member for these two tokens.
-
-3.  `CODECOV_TOKEN`: Allows [code coverage](https://app.codecov.io/)
-    results to be displayed via the `badger::badge_codecov()` at the top
-    of the *README.Rmd*. This token is repository-specific,
-
-^ You can get the [Codecov](https://app.codecov.io/) token from
-[here](https://app.codecov.io/gh/neurogenomics/templateR).
+    Ask a fellow [Neurogenomics Lab](https://www.neurogenomics.co.uk/)
+    member for this token.
 
 ### GitHub Pages
 

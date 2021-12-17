@@ -3,13 +3,13 @@ citHeader("To cite this package, please use:")
 citEntry(
   entry    = "Article",
   title    = "articleTitle",
-  author   = "author1, author1, author3",
+  author   = "author1, author2, author3",
   journal  = "journalName",
   year     = "publicationYear",
-  volume   = "volumeNumber",
-  number   = NULL,
-  pages    = NULL,
+  volume   = "volume",
+  number   = "number",
+  pages    = "pages",
   url      = "linkToPublication",
-  textVersion = paste("author1, author1, author3 (publicationYear) articleTitle, *journalName*; volumeNumber, [linkToPublication](linkToPublication)"
+  textVersion = paste("author1, author2, author3 (publicationYear) articleTitle, *journalName*; volumeNumber, [linkToPublication](linkToPublication)"
   )
 )
