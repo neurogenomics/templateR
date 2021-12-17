@@ -94,7 +94,7 @@ If you use `templateR`, please cite:
 
 <!-- Modify this my editing the file: inst/CITATION  -->
 
-> author1, author1, author3 (publicationYear) articleTitle,
+> author1, author2, author3 (publicationYear) articleTitle,
 > *journalName*; volumeNumber, [linkToPublication](linkToPublication)
 
 ## Installation
@@ -124,3 +124,5 @@ Faculty of Medicine
 Imperial College London  
 [GitHub](https://github.com/neurogenomics)  
 [DockerHub](https://hub.docker.com/orgs/neurogenomicslab)
+
+<br>
