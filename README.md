@@ -15,6 +15,46 @@ README updated: <i>Dec-17-2021</i>
 
 <!-- To modify Package/Title/Description/Authors fields, edit the DESCRIPTION file -->
 
+*&lt;—(Start of section that can be deleted after forking the
+template)—&gt;*
+
+## Setup
+
+`templateR` is a template designed to make developing new R packages
+easy by providing:
+
+-   **DESCRIPTION, vignettes/, tests/, R/, man/, inst/**: Basic skeleton
+    for the package itself.  
+-   **README.Rmd**: Auto-populates based on the *DESCRIPTION* file (that
+    can be knit to create *README.md*).  
+-   **inst/hex/hexSticker.Rmd**: Template for creating [hex
+    stickers](https://github.com/GuangchuangYu/hexSticker).
+-   **.github/workflows/\*.yml**: [GitHub
+    Actions](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions)
+    workflow files that will automatically trigger code checks and
+    pushing images to [DockerHub](https://hub-stage.docker.com/) every
+    time you make a push to your GitHub repo (from
+    [`r_workflows`](https://github.com/neurogenomics/r_workflows)).
+-   **inst/CITATIONS** : Allows users of your package to call
+    `citation("<packageName>")`. Also used to auto-populate the
+    *README.Rmd*.
+
+### GitHub Secrets
+
+Before pushing changes to your new R package, you will need to add two
+[GitHub
+Secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets):
+
+-   `PAT_GITHUB`: Speeds up installations on GitHub Actions.  
+-   `DOCKER_TOKEN`: Allows GitHub Actions to push to the
+    [neurogenomicslab
+    DockerHub](https://hub.docker.com/orgs/neurogenomicslab) account.
+
+Ask a fellow lab member for these tokens.
+
+*&lt;—(End of section that can be deleted after forking the
+template)—&gt;*
+
 ## `templateR`: packageTitle
 
 ### packageDescription.
