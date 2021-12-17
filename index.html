@@ -96,28 +96,25 @@ README updated: <i>Dec-17-2021</i>
 <li>
 <strong>inst/CITATIONS</strong> : Allows users of your package to call <code>citation("&lt;packageName&gt;")</code>. Also used to auto-populate the <em>README.Rmd</em>.</li>
 </ul>
+<p>To get started, simply click on the green <strong>Use this template</strong> button at the top right of the <code>templateR</code> repo.</p>
 <div class="section level3">
 <h3 id="github-secrets">GitHub Secrets<a class="anchor" aria-label="anchor" href="#github-secrets"></a>
 </h3>
 <p>Before pushing changes to your new R package, you will need to add two <a href="https://docs.github.com/en/actions/security-guides/encrypted-secrets" class="external-link">GitHub Secrets</a>:</p>
 <ol style="list-style-type: decimal">
 <li>
-<code>PAT_GITHUB</code>: Speeds up installations on GitHub Actions.<br>
+<code>PAT_GITHUB</code>: Speeds up installations and gives access to private repos on GitHub Actions. You can generate your very own Personal Authentication Token using <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token" class="external-link">these instructions</a>.<br>
 </li>
 <li>
-<code>DOCKER_TOKEN</code>: Allows GitHub Actions to push to the <a href="https://hub.docker.com/orgs/neurogenomicslab" class="external-link">neurogenomicslab DockerHub</a> account.</li>
-</ol>
-<p>^ Ask a fellow <a href="https://www.neurogenomics.co.uk/" class="external-link">Neurogenomics Lab</a> member for these two tokens.</p>
-<ol start="3" style="list-style-type: decimal">
+<code>CODECOV_TOKEN</code>: Allows <a href="https://app.codecov.io/" class="external-link">code coverage</a> results to be displayed via the <code><a href="https://rdrr.io/pkg/badger/man/badge_codecov.html" class="external-link">badger::badge_codecov()</a></code> at the top of the <em>README.Rmd</em>. This <a href="https://app.codecov.io/" class="external-link">Codecov</a> token is repository-specific and can be found <a href="https://app.codecov.io/gh/neurogenomics/templateR" class="external-link">here</a>.</li>
 <li>
-<code>CODECOV_TOKEN</code>: Allows <a href="https://app.codecov.io/" class="external-link">code coverage</a> results to be displayed via the <code><a href="https://rdrr.io/pkg/badger/man/badge_codecov.html" class="external-link">badger::badge_codecov()</a></code> at the top of the <em>README.Rmd</em>. This token is repository-specific,</li>
+<code>DOCKER_TOKEN</code>: Allows GitHub Actions to push to the <a href="https://hub.docker.com/orgs/neurogenomicslab" class="external-link">neurogenomicslab DockerHub</a> account. Ask a fellow <a href="https://www.neurogenomics.co.uk/" class="external-link">Neurogenomics Lab</a> member for this token.</li>
 </ol>
-<p>^ You can get the <a href="https://app.codecov.io/" class="external-link">Codecov</a> token from <a href="https://app.codecov.io/gh/neurogenomics/templateR" class="external-link">here</a>.</p>
 </div>
 <div class="section level3">
 <h3 id="github-pages">GitHub Pages<a class="anchor" aria-label="anchor" href="#github-pages"></a>
 </h3>
-<p>The <a href="https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions" class="external-link">GitHub Actions</a> workflows included in this template will automatically create a documentation website for your package. This requires several initial setup steps (you only need to do these once per repo):</p>
+<p>The <a href="https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions" class="external-link">GitHub Actions</a> workflows included in this template will automatically create a documentation website for your package via <a href="https://pages.github.com/" class="external-link">GitHub Pages</a>. This requires several initial setup steps (you only need to do these once per repo):</p>
 <ol style="list-style-type: decimal">
 <li>After <em>check-bioc-docker.yml</em> has successfully run on Ubuntu for the first, a new branch will appear in your repo called “gh-pages”.<br>
 </li>
@@ -137,7 +134,7 @@ README updated: <i>Dec-17-2021</i>
 <p>If you use <code>templateR</code>, please cite:</p>
 <!-- Modify this my editing the file: inst/CITATION  -->
 <blockquote>
-<p>author1, author1, author3 (publicationYear) articleTitle, <em>journalName</em>; volumeNumber, <a href="linkToPublication">linkToPublication</a></p>
+<p>author1, author2, author3 (publicationYear) articleTitle, <em>journalName</em>; volumeNumber, <a href="linkToPublication">linkToPublication</a></p>
 </blockquote>
 </div>
 </div>
