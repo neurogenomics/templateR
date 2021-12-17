@@ -20,10 +20,10 @@ jobs:
       GITHUB_REPO: ${{ github.repository }}
       ## Can save variable as GitHub Secret, or manually enter DockerHub 
       ## username here (e.g. "bschilder").
-      DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+      DOCKER_USERNAME: "bschilder"
       ## Can save variable as GitHub Secret, or manually enter DockerHub 
       ## organization name (or simply username) here (e.g. "neurogenomicslab").
-      DOCKER_ORG: ${{ secrets.DOCKER_USERNAME }} 
+      DOCKER_ORG: "neurogenomicslab" 
     steps:
       - uses: actions/checkout@v2
       - name: Setup R
