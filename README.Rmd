@@ -1,0 +1,63 @@
+---
+title: ""  
+author: "<img src='`r read.dcf('DESCRIPTION', fields = 'URL')[1]`/`r read.dcf('DESCRIPTION', fields = 'Package')[1]`/raw/`r gsub('[*] ','',system('git branch', intern = TRUE)[1])`/inst/hex/hex.png' height='300'><br><br>
+        `r badger::badge_github_version(color = 'black')` 
+        `r badger::badge_github_actions(action = 'R-CMD-check-bioc')`
+        `r badger::badge_last_commit()`
+        `r badger::badge_codecov()` 
+        `r badger::badge_license()` 
+        <h5>Authors: <i>`r auths <- eval(parse(text = gsub('person','c',read.dcf('DESCRIPTION', fields = 'Authors@R'))));paste(auths[names(auths)=='given'],auths[names(auths)=='family'], collapse = ', ')`</i></h5>" 
+date: "<h5>README updated: <i>`r format( Sys.Date(), '%b-%d-%Y')`</i></h5>"
+output:
+  github_document
+---
+
+<!-- To modify Package/Title/Description/Authors fields, edit the DESCRIPTION file -->
+
+```{r, echo=FALSE, include=FALSE}
+pkg <- read.dcf("DESCRIPTION", fields = "Package")[1]
+title <- read.dcf("DESCRIPTION", fields = "Title")[1]
+description <- read.dcf("DESCRIPTION", fields = "Description")[1]
+URL <- read.dcf('DESCRIPTION', fields = 'URL')[1]
+owner <- tolower(strsplit(URL,"/")[[1]][4])
+```
+ 
+## ``r pkg``: `r title`
+
+### `r description`
+ 
+If you use ``r pkg``, please cite: 
+
+<!-- Modify this my editing the file: inst/CITATION  -->
+> `r citation(pkg)$textVersion`
+
+## Installation 
+
+```R
+if(!require("remotes")) install.packages("remotes")
+
+remotes::install_github("`r URL`")
+library(`r pkg`)
+```
+## Documentation 
+
+### [Website](https://`r owner`.github.io/`r pkg`) 
+### [Getting started](https://`r owner`.github.io/`r pkg`/articles/`r pkg`) 
+
+<hr>
+
+## Contact
+
+<img src='https://www.neurogenomics.co.uk/author/neurogenomics-lab/avatar_hu361299fcf1f4e263f0b5bac1963703dd_83675_270x270_fill_q90_lanczos_center.jpg' height='100' style='border-radius: 100px'> 
+
+### [Neurogenomics Lab](https://www.neurogenomics.co.uk/)
+
+UK Dementia Research Institute  
+Department of Brain Sciences  
+Faculty of Medicine  
+Imperial College London  
+<br>  
+[GitHub](https://github.com/neurogenomics)  
+[DockerHub](https://hub.docker.com/orgs/neurogenomicslab)  
+
+
