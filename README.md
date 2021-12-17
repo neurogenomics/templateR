@@ -70,8 +70,9 @@ Secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets):
 The [GitHub
 Actions](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions)
 workflows included in this template will automatically create a
-documentation website for your package. This requires several initial
-setup steps (you only need to do these once per repo):
+documentation website for your package via [GitHub
+Pages](https://pages.github.com/). This requires several initial setup
+steps (you only need to do these once per repo):
 
 1.  After *check-bioc-docker.yml* has successfully run on Ubuntu for the
     first, a new branch will appear in your repo called “gh-pages”.  

@@ -48,7 +48,7 @@ you will need to add two [GitHub Secrets](https://docs.github.com/en/actions/sec
 
 ### GitHub Pages
 
-The [GitHub Actions](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions) workflows included in this template will automatically create a documentation website for your package. This requires several initial setup steps (you only need to do these once per repo):  
+The [GitHub Actions](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions) workflows included in this template will automatically create a documentation website for your package via [GitHub Pages](https://pages.github.com/). This requires several initial setup steps (you only need to do these once per repo):  
 
 1. After *check-bioc-docker.yml* has successfully run on Ubuntu for the first, a new branch will appear in your repo called "gh-pages".  
 2. In the **Settings** tab of your repo, go to **Pages** on the left. Then under **Source** select `"branch: gh-pages"` and `"root"` from the respective dropdown menus. Finally, click the **Save** button.  
