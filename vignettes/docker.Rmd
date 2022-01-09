@@ -47,7 +47,6 @@ Once the image has been created, you can launch it with:
 ```
 docker run \
   -d \
-  --rm \
   -e ROOT=true \
   -e PASSWORD="<your_password>" \
   -v ~/Desktop:/Desktop \
