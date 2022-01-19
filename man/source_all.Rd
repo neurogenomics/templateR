@@ -2,9 +2,18 @@
 % Please edit documentation in R/source_all.R
 \name{source_all}
 \alias{source_all}
-\title{Source all function.}
+\title{Source all functions}
 \usage{
-source_all(path = "R/", pattern = "*.R$", packages = "dplyr")
+source_all(path = "R/", pattern = "*.R$", packages = "dplyr", ...)
+}
+\arguments{
+\item{path}{Directory containing R files.}
+
+\item{pattern}{File name pattern to search for.}
+
+\item{packages}{Packages to install and load.}
+
+\item{...}{Additional arguments passed to \link[base]{source}.}
 }
 \description{
 Source all R files in a directory at once. 

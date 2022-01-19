@@ -44,20 +44,23 @@ RUN apt-get update && \
 	qpdf \
 	&& apt-get clean \
     && rm -rf /var/lib/apt/lists/*
-RUN mkdir /buildzone
-ADD . /buildzone
-WORKDIR /buildzone
+# Create a buildzone folder named after the R package 
+# BiocCheck requires the buildzone to have the same name as the R package 
+RUN pkg=$(Rscript -e 'cat(read.dcf("DESCRIPTION", fields = "Package")[1])') 
+RUN mkdir /$pkg
+ADD . /$pkg
+WORKDIR /$pkg
 # Install dependencies with AnVil (faster)
 RUN Rscript -e 'options(download.file.method= "libcurl"); \
-                if(!"BiocManager" %in% rownames(utils::installed.packages)) {install.packages("BiocManager")}; \
-                if(!"AnVIL" %in% rownames(utils::installed.packages)) {BiocManager::install("AnVIL", ask = FALSE)}; \
+                if(!require("BiocManager")) install.packages("BiocManager"); \
+                if(!require("AnVIL"))  {BiocManager::install("AnVIL", ask = FALSE)}; \
+                AnVIL::install(c("remotes","devtools")); \
                 try({remotes::install_github("bergant/rapiclient")}); \
-                bioc_ver <- BiocManager::version() \ 
+                bioc_ver <- BiocManager::version(); \ 
                 options(repos = c(AnVIL::repositories(),\
                                   AnVIL = file.path("https://bioconductordocker.blob.core.windows.net/packages",bioc_ver,"bioc"),\
                                   CRAN = "https://cran.rstudio.com/"),\
                                   download.file.method = "libcurl", Ncpus = 2); \
-                AnVIL::install(c("remotes","devtools")); \
                 deps <- remotes::dev_package_deps(dependencies = TRUE)$package; \
                 AnVIL::install(pkgs = deps,  ask = FALSE); \
                 deps_left <- deps[!deps %in% rownames(installed.packages())]; \
@@ -72,4 +75,4 @@ Run Rscript -e 'devtools::check()'
 #                                     `no-check-bioc-help` = TRUE);'
 # Install R package from source
 RUN R -e 'remotes::install_local(upgrade="never")'
-RUN rm -rf /buildzone
+RUN rm -rf /$pkg
