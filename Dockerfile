@@ -69,11 +69,13 @@ RUN Rscript -e 'options(download.file.method= "libcurl"); \
 # Run R CMD check - will fail with any errors or warnings
 Run Rscript -e 'devtools::check()'
 # Run Bioconductor's BiocCheck (optional)
-# Fixed here: https://github.com/Bioconductor/BiocCheck/pull/145
-#Run Rscript -e 'remotes::install_github("Bioconductor/BiocCheck", force = TRUE); \
-#                BiocCheck::BiocCheck(`quit-with-status` = TRUE,\
-#                                     `no-check-R-ver` = TRUE,\
-#                                     `no-check-bioc-help` = TRUE);'
-# Install R package from source
+#ARG BIOC
+#RUN if [ "$BIOC" = "true" ]; then \
+#        Rscript -e 'if(!require("BiocCheck")) AnVIL::install("BiocCheck");\
+#                    BiocCheck::BiocCheck(`quit-with-status` = TRUE,\
+#                    `no-check-R-ver` = TRUE,\
+#                    `no-check-bioc-help` = TRUE);'\
+#    fi
+# Install R package from source 
 RUN R -e 'remotes::install_local(upgrade="never")'
 RUN rm -rf /$PKG

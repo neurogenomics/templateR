@@ -12,6 +12,7 @@
 #' @param packages Packages to install and load. 
 #' @param ... Additional arguments passed to \link[base]{source}. 
 #' 
+#' @return Null 
 #' @keywords internal
 source_all <- function(path="R/",
                        pattern="*.R$",
@@ -25,7 +26,7 @@ source_all <- function(path="R/",
                               pattern = pattern, 
                               full.names = TRUE, ignore.case = TRUE)
     message("Sourcing ",length(file.sources)," files.")
-    out <- sapply(file.sources, function(x){
-        try({source(x,...)})
-    })
+    out <- vapply(X = file.sources, 
+                  FUN = function(x){try({source(x,...)})}, 
+                  FUN.VALUE = character(1))
 }

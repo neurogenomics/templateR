@@ -15,6 +15,9 @@ source_all(path = "R/", pattern = "*.R$", packages = "dplyr", ...)
 
 \item{...}{Additional arguments passed to \link[base]{source}.}
 }
+\value{
+Null
+}
 \description{
 Source all R files in a directory at once. 
 Also loads selected libraries. 

@@ -7,7 +7,7 @@
 is_32bit()
 }
 \value{
-Null
+Logical
 }
 \description{
 Helper function to avoid duplicate test runs on Windows OS.

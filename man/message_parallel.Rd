@@ -7,7 +7,7 @@
 message_parallel(...)
 }
 \value{
-A message
+Null
 }
 \description{
 Send messages to console even from within parallel processes

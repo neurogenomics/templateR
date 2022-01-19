@@ -9,6 +9,9 @@ stopper(..., v = TRUE)
 \arguments{
 \item{v}{Whether to print messages or not.}
 }
+\value{
+Null
+}
 \description{
 Conditionally print stop messages.
 Allows developers to easily control verbosity of functions, 

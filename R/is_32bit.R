@@ -2,7 +2,7 @@
 #'
 #' Helper function to avoid duplicate test runs on Windows OS.
 #'
-#' @return Null
+#' @return Logical
 #'
 #' @keywords internal
 is_32bit <- function() {

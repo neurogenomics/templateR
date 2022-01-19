@@ -12,6 +12,9 @@ messager(..., v = TRUE, parallel = FALSE)
 \item{parallel}{Whether to enable message print when wrapped 
 in parallelised functions.}
 }
+\value{
+Null
+}
 \description{
 Conditionally print messages.
  Allows developers to easily control verbosity of functions, 

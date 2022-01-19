@@ -10,6 +10,7 @@
 #' @param parallel Whether to enable message print when wrapped 
 #' in parallelised functions.
 #' 
+#' @return Null 
 #' @keywords internal 
 messager <- function(..., v = TRUE, parallel = FALSE) {
     if(parallel){
