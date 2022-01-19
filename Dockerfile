@@ -46,11 +46,13 @@ RUN apt-get update && \
     && rm -rf /var/lib/apt/lists/*
 # Create a buildzone folder named after the R package 
 # BiocCheck requires the buildzone to have the same name as the R package 
-ADD . .
-RUN pkg=$(Rscript -e 'cat(read.dcf("DESCRIPTION", fields = "Package")[1])') 
-RUN mkdir /$pkg
-ADD . /$pkg
-WORKDIR /$pkg
+#COPY ./DESCRIPTION .
+#RUN PKG=$(Rscript -e 'cat(read.dcf("DESCRIPTION", fields = "Package")[1])') 
+ARG PKG
+RUN echo $PKG
+RUN mkdir /$PKG
+ADD . /$PKG
+WORKDIR /$PKG
 # Install dependencies with AnVil (faster)
 RUN Rscript -e 'options(download.file.method= "libcurl"); \
                 if(!require("BiocManager")) install.packages("BiocManager"); \
@@ -76,4 +78,4 @@ Run Rscript -e 'devtools::check()'
 #                                     `no-check-bioc-help` = TRUE);'
 # Install R package from source
 RUN R -e 'remotes::install_local(upgrade="never")'
-RUN rm -rf /$pkg
+RUN rm -rf /$PKG

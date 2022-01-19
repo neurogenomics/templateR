@@ -58,6 +58,8 @@ jobs:
       ## This pipeline does not currrently run checks outside of the Dockerfile.
       - name: Build service
         uses: docker/build-push-action@v2
+        build-args: |
+            PKG=${{ env.packageName }}
         with:
           load: true
           tags: |
