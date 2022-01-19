@@ -36,7 +36,7 @@ jobs:
           #### DockerHub repos must be lowercase (,,) ####
           name=$(grep '^Package:' DESCRIPTION | cut -d\   -f2)
           echo "packageName=${pkg,,}" >> $GITHUB_ENV
-          echo pkg
+          echo $pkg
           
           version=$(grep Version DESCRIPTION | grep -o "[0-9.]\+")
           echo "packageVersion=${version}" >> $GITHUB_ENV
@@ -59,12 +59,14 @@ jobs:
       - name: Build service
         uses: docker/build-push-action@v2
         with:
-          build-args: |
-            PKG=${{ env.packageName }}
+          context: .
+          push: true
           load: true
           tags: |
             ${{ env.DOCKER_ORG }}/${{ env.packageName }}:${{ env.packageVersion }}
             ${{ env.DOCKER_ORG }}/${{ env.packageName }}:latest 
+          build-args: |
+            PKG=${{ env.packageName }}
 
       - name: push service
         run: |
