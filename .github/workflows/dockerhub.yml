@@ -60,7 +60,6 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          push: true
           load: true
           tags: |
             ${{ env.DOCKER_ORG }}/${{ env.packageName }}:${{ env.packageVersion }}
