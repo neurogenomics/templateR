@@ -28,6 +28,15 @@
     <loc>/reference/is_32bit.html</loc>
   </url>
   <url>
+    <loc>/reference/message_parallel.html</loc>
+  </url>
+  <url>
+    <loc>/reference/messager.html</loc>
+  </url>
+  <url>
     <loc>/reference/source_all.html</loc>
+  </url>
+  <url>
+    <loc>/reference/stopper.html</loc>
   </url>
 </urlset>

@@ -1,8 +1,8 @@
 pandoc: 2.14.0.3
-pkgdown: 2.0.1.9000
-pkgdown_sha: e25bd0bb6a604ecc60d704c7154f291afbf0dd7b
+pkgdown: 2.0.2.9000
+pkgdown_sha: 25a1ab2d04c2b8251214b5189fa6735896468cd7
 articles:
   docker: docker.html
   templateR: templateR.html
-last_built: 2022-01-09T18:35Z
+last_built: 2022-01-19T16:58Z
 
