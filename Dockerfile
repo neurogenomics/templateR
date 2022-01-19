@@ -46,7 +46,7 @@ RUN apt-get update && \
     && rm -rf /var/lib/apt/lists/*
 # Create a buildzone folder named after the R package 
 # BiocCheck requires the buildzone to have the same name as the R package 
-ADD ./DESCRIPTION .
+ADD . .
 RUN pkg=$(Rscript -e 'cat(read.dcf("DESCRIPTION", fields = "Package")[1])') 
 RUN mkdir /$pkg
 ADD . /$pkg
