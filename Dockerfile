@@ -46,11 +46,9 @@ RUN apt-get update && \
     && rm -rf /var/lib/apt/lists/*
 # Create a buildzone folder named after the R package 
 # BiocCheck requires the buildzone to have the same name as the R package 
-#COPY ./DESCRIPTION .
-#RUN PKG=$(Rscript -e 'cat(read.dcf("DESCRIPTION", fields = "Package")[1])') 
 ARG PKG
 RUN echo $PKG
-RUN mkdir /$PKG
+RUN mkdir -p /$PKG
 ADD . /$PKG
 WORKDIR /$PKG
 # Install dependencies with AnVil (faster)
