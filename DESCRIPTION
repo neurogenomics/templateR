@@ -30,7 +30,8 @@ Suggests:
     badger,
     hexSticker,
     utils,
-    here
+    here,
+    dplyr
 RoxygenNote: 7.1.2
 VignetteBuilder: knitr
 License: GPL-3
