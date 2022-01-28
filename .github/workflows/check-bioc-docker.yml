@@ -354,6 +354,15 @@ jobs:
           echo "packageVersion=${version}" >> $GITHUB_ENV
           echo $version
         shell: bash {0}   
+
+      - uses: actions/checkout@v2 
+        if: "!contains(github.event.head_commit.message, '/nodocker') && env.run_docker == 'true' && runner.os == 'Linux' "
+      
+      - name: Setup R
+        if: "!contains(github.event.head_commit.message, '/nodocker') && env.run_docker == 'true' && runner.os == 'Linux' "
+        uses: r-lib/actions/setup-r@v1
+        with:
+          install-r: false
       
       # Set up Docker 
       - name: Set up Docker Buildx
