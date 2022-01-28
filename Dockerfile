@@ -68,7 +68,7 @@ RUN Rscript -e 'options(download.file.method= "libcurl"); \
                 deps_left <- deps[!deps %in% rownames(installed.packages())]; \
                 if(length(deps_left)>0) devtools::install_dev_deps(dependencies = TRUE, upgrade = "never");'
 # Run R CMD check - will fail with any errors or warnings
-Run Rscript -e 'devtools::check()'
+# Run Rscript -e 'devtools::check()'
 # Run Bioconductor's BiocCheck (optional)
 #ARG BIOC
 #RUN if [ "$BIOC" = "true" ]; then \
