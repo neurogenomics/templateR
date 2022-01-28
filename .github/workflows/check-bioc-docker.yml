@@ -340,8 +340,16 @@ jobs:
           name: ${{ runner.os }}-biocversion-${{ matrix.config.bioc }}-r-${{  matrix.config.r }}-results
           path: check 
           
-      ## DockerHub steps
+      # DockerHub steps
+      - uses: actions/checkout@v2
+      - name: Setup R
+        if: "!contains(github.event.head_commit.message, '/nodocker') && env.run_docker == 'true' && runner.os == 'Linux' "
+        uses: r-lib/actions/setup-r@v1
+        with:
+          install-r: false
+          
       - name: Get R package info
+        if: "!contains(github.event.head_commit.message, '/nodocker') && env.run_docker == 'true' && runner.os == 'Linux' "
         run: |
           #### DockerHub repos must be lowercase (,,) ####
           name=$(grep '^Package:' DESCRIPTION | cut -d\   -f2)
@@ -357,6 +365,7 @@ jobs:
       # Make sure login works first
       - name: Login to DockerHub
         uses: docker/login-action@v1
+        if: "!contains(github.event.head_commit.message, '/nodocker') && env.run_docker == 'true' && runner.os == 'Linux' "
         with:
           username: ${{ env.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_TOKEN }}
@@ -367,6 +376,7 @@ jobs:
       # Build and push to DockerHub
       - name: Build service
         uses: docker/build-push-action@v2
+        if: "!contains(github.event.head_commit.message, '/nodocker') && env.run_docker == 'true' && runner.os == 'Linux' "
         with:
           load: true
           tags: |
