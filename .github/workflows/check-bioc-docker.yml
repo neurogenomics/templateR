@@ -43,7 +43,7 @@ env:
   run_docker: 'true'
 
 jobs: 
-  build-check:
+  R-CMD-check:
     runs-on: ${{ matrix.config.os }}
     name: ${{ matrix.config.os }} (${{ matrix.config.r }})
     container: ${{ matrix.config.cont }}
@@ -341,13 +341,6 @@ jobs:
           path: check 
           
       # DockerHub steps
-      - uses: actions/checkout@v2
-      - name: Setup R
-        if: "!contains(github.event.head_commit.message, '/nodocker') && env.run_docker == 'true' && runner.os == 'Linux' "
-        uses: r-lib/actions/setup-r@v1
-        with:
-          install-r: false
-          
       - name: Get R package info
         if: "!contains(github.event.head_commit.message, '/nodocker') && env.run_docker == 'true' && runner.os == 'Linux' "
         run: |
