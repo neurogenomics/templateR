@@ -65,10 +65,16 @@ jobs:
       TZ: UTC
       GITHUB_TOKEN: ${{ secrets.PAT_GITHUB }}
       GITHUB_PAT: ${{ secrets.PAT_GITHUB }}
-      RGL_USE_NULL: TRUE
-
+      GITHUB_REPO: ${{ github.repository }}
+      RGL_USE_NULL: TRUE 
+      ## Can save variable as GitHub Secret, or manually enter DockerHub 
+      ## username here (e.g. "bschilder").
+      DOCKER_USERNAME: "bschilder"
+      ## Can save variable as GitHub Secret, or manually enter DockerHub 
+      ## organization name (or simply username) here (e.g. "neurogenomicslab").
+      DOCKER_ORG: "neurogenomicslab" 
+      
     steps:
-
       ## Set the R library to the directory matching the
       ## R packages cache step further below when running on Docker (Linux).
       - name: Set R Library home on Linux
@@ -334,3 +340,26 @@ jobs:
           name: ${{ runner.os }}-biocversion-${{ matrix.config.bioc }}-r-${{  matrix.config.r }}-results
           path: check 
           
+      ## DockerHub steps
+      - name: Get R package info
+        run: |
+          #### DockerHub repos must be lowercase (,,) ####
+          name=$(grep '^Package:' DESCRIPTION | cut -d\   -f2)
+          echo "packageName=${name,,}" >> $GITHUB_ENV
+          echo "packageNameOrig=${name}" >> $GITHUB_ENV
+          echo $name
+          
+          version=$(grep Version DESCRIPTION | grep -o "[0-9.]\+")
+          echo "packageVersion=${version}" >> $GITHUB_ENV
+          echo $version
+        shell: bash {0}   
+        
+      - uses: docker/build-push-action@v1
+        if: "!contains(github.event.head_commit.message, '/nodocker') && env.run_docker == 'true' && runner.os == 'Linux' "
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          repository: ${{ env.DOCKER_ORG }}/${{ env.packageName }}
+          tags: |
+            ${{ env.packageVersion }}
+            latest
