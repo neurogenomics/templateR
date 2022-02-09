@@ -164,8 +164,7 @@ jobs:
       - name: Install Windows system dependencies
         if: runner.os == 'Windows'
         run: |
-          yum install libcurlyum install libcurl-devel
-          yum install libcurl-devel
+          yum install libcurl libcurl-devel
         shell: Rscript {0}
 
       - name: Install BiocManager
