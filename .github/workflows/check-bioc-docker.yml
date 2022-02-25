@@ -164,7 +164,7 @@ jobs:
       - name: Install Windows system dependencies
         if: runner.os == 'Windows'
         run: |
-          npm install curl 
+          npm install curl libmxl2 libmxl2-devel
 
       - name: Install BiocManager
         run: |
