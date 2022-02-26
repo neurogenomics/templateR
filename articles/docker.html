@@ -81,8 +81,14 @@
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1 data-toc-skip></h1>
+      <h1 data-toc-skip>Docker/Singularity Containers</h1>
+                        <h4 data-toc-skip class="author"><h4>
+Authors: <i>yourGivenName yourFamilyName</i>
+</h4></h4>
             
+            <h4 data-toc-skip class="date"><h4>
+Vignette updated: <i>Feb-26-2022</i>
+</h4></h4>
       
       <small class="dont-index">Source: <a href="https://github.com/neurogenomics/templateR/blob/HEAD/vignettes/docker.Rmd" class="external-link"><code>vignettes/docker.Rmd</code></a></small>
       <div class="hidden name"><code>docker.Rmd</code></div>
@@ -91,48 +97,12 @@
 
     
     
-<table class="table"><tbody>
-<tr class="odd">
-<td>title: “Docker/Singularity Containers”</td>
-</tr>
-<tr class="even">
-<td>author: “</td>
-</tr>
-<tr class="odd">
-<td>date: “</td>
-</tr>
-<tr class="even">
-<td>output:</td>
-</tr>
-<tr class="odd">
-<td>BiocStyle::html_document:</td>
-</tr>
-<tr class="even">
-<td>md_extensions: [</td>
-</tr>
-<tr class="odd">
-<td>“-autolink_bare_uris”</td>
-</tr>
-<tr class="even">
-<td>]</td>
-</tr>
-<tr class="odd">
-<td>vignette: &gt;</td>
-</tr>
-<tr class="even">
-<td>%</td>
-</tr>
-<tr class="odd">
-<td>%</td>
-</tr>
-<tr class="even">
-<td>%</td>
-</tr>
-</tbody></table>
 <div class="section level2">
 <h2 id="dockerhub">DockerHub<a class="anchor" aria-label="anchor" href="#dockerhub"></a>
 </h2>
-<p>templater is now available via <a href="https://hub.docker.com/repository/docker/neurogenomicslab/templater" class="external-link">DockerHub</a> as a containerised environment with Rstudio and all necessary dependencies pre-installed.</p>
+<p>templater is now available via <a href="https://hub.docker.com/repository/docker/neurogenomicslab/templater" class="external-link">DockerHub</a>
+as a containerised environment with Rstudio and all necessary
+dependencies pre-installed.</p>
 <div class="section level3">
 <h3 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h3>
@@ -140,8 +110,10 @@
 <div class="section level3">
 <h3 id="method-1-via-docker">Method 1: via Docker<a class="anchor" aria-label="anchor" href="#method-1-via-docker"></a>
 </h3>
-<p>First, <a href="https://docs.docker.com/get-docker/" class="external-link">install Docker</a> if you have not already.</p>
-<p>Create an image of the <a href="https://www.docker.com/" class="external-link">Docker</a> container in command line:</p>
+<p>First, <a href="https://docs.docker.com/get-docker/" class="external-link">install
+Docker</a> if you have not already.</p>
+<p>Create an image of the <a href="https://www.docker.com/" class="external-link">Docker</a>
+container in command line:</p>
 <pre><code>docker pull neurogenomicslab/templater</code></pre>
 <p>Once the image has been created, you can launch it with:</p>
 <pre><code>docker run \
@@ -156,27 +128,35 @@
 <h4 id="notes">NOTES<a class="anchor" aria-label="anchor" href="#notes"></a>
 </h4>
 <ul>
-<li>Make sure to replace <code>&lt;your_password&gt;</code> above with whatever you want your password to be.<br>
+<li>Make sure to replace <code>&lt;your_password&gt;</code> above with
+whatever you want your password to be.<br>
 </li>
-<li>Change the paths supplied to the <code>-v</code> flags for your particular use case.</li>
-<li>The <code>-d</code> ensures the container will run in “detached” mode, which means it will persist even after you’ve closed your command line session.<br>
+<li>Change the paths supplied to the <code>-v</code> flags for your
+particular use case.</li>
+<li>The <code>-d</code> ensures the container will run in “detached”
+mode, which means it will persist even after you’ve closed your command
+line session.<br>
 </li>
 <li>The username will be <em>“rstudio”</em> by default.<br>
 </li>
-<li>Optionally, you can also install the <a href="https://www.docker.com/products/docker-desktop" class="external-link">Docker Desktop</a> to easily manage your containers.</li>
+<li>Optionally, you can also install the <a href="https://www.docker.com/products/docker-desktop" class="external-link">Docker Desktop</a>
+to easily manage your containers.</li>
 </ul>
 </div>
 </div>
 <div class="section level3">
 <h3 id="method-2-via-singularity">Method 2: via Singularity<a class="anchor" aria-label="anchor" href="#method-2-via-singularity"></a>
 </h3>
-<p>If you are using a system that does not allow Docker (as is the case for many institutional computing clusters), you can instead <a href="https://sylabs.io/guides/2.6/user-guide/singularity_and_docker.html" class="external-link">install Docker images via Singularity</a>.</p>
+<p>If you are using a system that does not allow Docker (as is the case
+for many institutional computing clusters), you can instead <a href="https://sylabs.io/guides/2.6/user-guide/singularity_and_docker.html" class="external-link">install
+Docker images via Singularity</a>.</p>
 <pre><code>singularity pull docker://neurogenomicslab/templater</code></pre>
 </div>
 <div class="section level3">
 <h3 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
 </h3>
-<p>Finally, launch the containerised Rstudio by entering the following URL in any web browser: <em><a href="http://localhost:8787/" class="external-link uri">http://localhost:8787/</a></em></p>
+<p>Finally, launch the containerised Rstudio by entering the following
+URL in any web browser: <em><a href="http://localhost:8787/" class="external-link uri">http://localhost:8787/</a></em></p>
 <p>Login using the credentials set during the Installation steps.</p>
 </div>
 </div>
@@ -185,7 +165,7 @@
 </h2>
 <details><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">utils</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html" class="external-link">sessionInfo</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<pre><code><span class="co">## R Under development (unstable) (2022-02-03 r81650)</span>
+<pre><code><span class="co">## R Under development (unstable) (2022-02-25 r81808)</span>
 <span class="co">## Platform: x86_64-pc-linux-gnu (64-bit)</span>
 <span class="co">## Running under: Ubuntu 20.04.3 LTS</span>
 <span class="co">## </span>
@@ -208,16 +188,16 @@
 <span class="co">## </span>
 <span class="co">## loaded via a namespace (and not attached):</span>
 <span class="co">##  [1] knitr_1.37          magrittr_2.0.2      R6_2.5.1           </span>
-<span class="co">##  [4] ragg_1.2.1          rlang_1.0.1         fastmap_1.1.0      </span>
+<span class="co">##  [4] ragg_1.2.2          rlang_1.0.1         fastmap_1.1.0      </span>
 <span class="co">##  [7] stringr_1.4.0       tools_4.2.0         xfun_0.29          </span>
-<span class="co">## [10] cli_3.1.1           jquerylib_0.1.4     systemfonts_1.0.3  </span>
-<span class="co">## [13] htmltools_0.5.2     yaml_2.2.2          digest_0.6.29      </span>
-<span class="co">## [16] rprojroot_2.0.2     pkgdown_2.0.2.9000  crayon_1.4.2       </span>
+<span class="co">## [10] cli_3.2.0           jquerylib_0.1.4     systemfonts_1.0.4  </span>
+<span class="co">## [13] htmltools_0.5.2     yaml_2.3.5          digest_0.6.29      </span>
+<span class="co">## [16] rprojroot_2.0.2     pkgdown_2.0.2.9000  crayon_1.5.0       </span>
 <span class="co">## [19] bookdown_0.24       textshaping_0.3.6   BiocManager_1.30.16</span>
 <span class="co">## [22] purrr_0.3.4         sass_0.4.0          fs_1.5.2           </span>
-<span class="co">## [25] memoise_2.0.1       cachem_1.0.6        evaluate_0.14      </span>
+<span class="co">## [25] memoise_2.0.1       cachem_1.0.6        evaluate_0.15      </span>
 <span class="co">## [28] rmarkdown_2.11      stringi_1.7.6       compiler_4.2.0     </span>
-<span class="co">## [31] bslib_0.3.1         desc_1.4.0          jsonlite_1.7.3</span></code></pre>
+<span class="co">## [31] bslib_0.3.1         desc_1.4.0          jsonlite_1.8.0</span></code></pre>
 </details><p><br></p>
 </div>
   </div>
@@ -239,7 +219,8 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.9000.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a>
+2.0.2.9000.</p>
 </div>
 
       </footer>
