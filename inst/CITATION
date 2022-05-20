@@ -1,4 +1,4 @@
-citHeader("To cite this package, please use:")
+citHeader("If you use this package, please cite:")
 
 citEntry(
   entry    = "Article",
