@@ -14,7 +14,7 @@
 #' @inheritParams base::assign
 #'
 #' @keywords internal
-#' @importFrom methods is
+#' @importFrom methods is show
 #' @returns A named list with each argument's default value, or simply a
 #' \link[base]{stop} function declaring "No default".
 #' @source
@@ -49,17 +49,21 @@ args2vars <- function(fn,
         }, error = function(e) function(){stop("No default")})
         #### Assign global ####
         if(remove){ 
-            if(exists(arg, envir = envir)) warning("Global removal failed.") 
+            if(exists(arg, envir = envir)) {
+                warning("Global removal failed.") 
+            }
         } else {
             assign(x = arg,
                    value = arg_final,
                    pos = .GlobalEnv,
                    envir = .GlobalEnv)
-            if(!exists(arg, envir = envir)) warning("Global assignment failed.")
+            if(!exists(arg, envir = envir)) {
+                warning("Global assignment failed.")
+            }
         } 
         return(arg_final)
     })
     names(args_return) <- names(argument_list)
-    print(args_return)
+    methods::show(args_return)
     return(args_return)
 }
