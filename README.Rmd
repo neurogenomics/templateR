@@ -63,7 +63,7 @@ The [GitHub Actions](https://docs.github.com/en/actions/learn-github-actions/und
  
 If you use ``r pkg``, please cite: 
 
-<!-- Modify this my editing the file: inst/CITATION  -->
+<!-- Modify this by editing the file: inst/CITATION  -->
 > `r citation(pkg)$textVersion`
 
 ## Installation 

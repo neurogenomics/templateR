@@ -18,6 +18,7 @@ Depends: R (>= 4.1)
 biocViews:
     Genetics, FunctionalGenomics, SystemsBiology
 Imports:
+    methods
 Suggests:
     markdown,
     rmarkdown,
@@ -31,8 +32,9 @@ Suggests:
     hexSticker,
     utils,
     here,
-    dplyr
-RoxygenNote: 7.1.2
+    dplyr,
+    rlang
+RoxygenNote: 7.2.0
 VignetteBuilder: knitr
 License: GPL-3
 Config/testthat/edition: 3
