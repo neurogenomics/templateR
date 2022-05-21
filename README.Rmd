@@ -64,7 +64,7 @@ The [GitHub Actions](https://docs.github.com/en/actions/learn-github-actions/und
 If you use ``r pkg``, please cite: 
 
 <!-- Modify this by editing the file: inst/CITATION  -->
-> `r citation(pkg)$textVersion`
+> `r utils::citation(pkg)$textVersion`
 
 ## Installation 
 
