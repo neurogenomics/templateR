@@ -8,21 +8,31 @@
 #' but is much slower).
 #' 
 #' @param path Directory containing R files.
-#' @param pattern File name pattern to search for. 
-#' @param ... Additional arguments passed to \link[base]{source}. 
+#' @param pattern File name pattern to search for.
+#' @param packages Packages to load. 
+#' @param ... Additional arguments passed to \link[base]{sys.source}. 
+#' @inheritParams base::sys.source
 #' 
 #' @return Null 
 #' @keywords internal
 source_all <- function(path="R/",
-                       pattern="*.R$", 
-                       ...){    
-    #### Source all internal funcs at once ####
+                       pattern="*.R$",
+                       packages = NULL, 
+                       envir = globalenv(),
+                       ...){   
+    for(x in packages){ 
+        require(x, character.only=TRUE)
+    }
+    #### Source all internal funcs at once #### 
     file.sources = list.files(path = path,
                               pattern = pattern, 
-                              full.names = TRUE, 
-                              ignore.case = TRUE)
-    message("Sourcing ",length(file.sources)," files.")
-    out <- vapply(X = file.sources, 
-                  FUN = function(x){try({source(x,...)})}, 
-                  FUN.VALUE = character(1))
+                              full.names = TRUE, ignore.case = TRUE)
+    
+    if(length(file.sources)>0){
+        message("Sourcing ",length(file.sources)," files.")
+    } else {
+        message("No files found to source.")
+    }
+    out <- lapply(X = file.sources, 
+                  FUN = function(x){try({sys.source(x,envir = envir, ...)})})
 }
