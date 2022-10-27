@@ -3,20 +3,20 @@
 [![R build
 status](https://github.com/neurogenomics/templateR/workflows/R-CMD-check-bioc/badge.svg)](https://github.com/neurogenomics/templateR/actions)
 [![](https://img.shields.io/github/last-commit/neurogenomics/templateR.svg)](https://github.com/neurogenomics/templateR/commits/master)
-[![](https://codecov.io/gh/neurogenomics/templateR/branch/master/graph/badge.svg)](https://codecov.io/gh/neurogenomics/templateR)
+[![](https://app.codecov.io/gh/neurogenomics/templateR/branch/master/graph/badge.svg)](https://app.codecov.io/gh/neurogenomics/templateR)
 [![License:
 GPL-3](https://img.shields.io/badge/license-GPL--3-blue.svg)](https://cran.r-project.org/web/licenses/GPL-3)
 <h4>
 Authors: <i>yourGivenName yourFamilyName</i>
 </h4>
 <h4>
-README updated: <i>Dec-17-2021</i>
+README updated: <i>Oct-27-2022</i>
 </h4>
 
 <!-- To modify Package/Title/Description/Authors fields, edit the DESCRIPTION file -->
 
-*&lt;—(Start of section that can be deleted after forking the
-template)—&gt;*
+*\<—(Start of section that can be deleted after forking the
+template)—\>*
 
 ## Setup
 
@@ -83,8 +83,7 @@ steps (you only need to do these once per repo):
 *Note*: If you don’t have admin access to your repo, you will need to
 ask someone who does to change this for you.
 
-*&lt;—(End of section that can be deleted after forking the
-template)—&gt;*
+*\<—(End of section that can be deleted after forking the template)—\>*
 
 ## `templateR`: packageTitle
 
@@ -92,7 +91,7 @@ template)—&gt;*
 
 If you use `templateR`, please cite:
 
-<!-- Modify this my editing the file: inst/CITATION  -->
+<!-- Modify this by editing the file: inst/CITATION  -->
 
 > author1, author2, author3 (publicationYear) articleTitle,
 > *journalName*; volumeNumber, [linkToPublication](linkToPublication)
