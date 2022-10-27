@@ -76,23 +76,47 @@ but is much slower).</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">source_all</span><span class="op">(</span>path <span class="op">=</span> <span class="st">"R/"</span>, pattern <span class="op">=</span> <span class="st">"*.R$"</span>, packages <span class="op">=</span> <span class="st">"dplyr"</span>, <span class="va">...</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">source_all</span><span class="op">(</span></span>
+<span>  path <span class="op">=</span> <span class="st">"R/"</span>,</span>
+<span>  pattern <span class="op">=</span> <span class="st">"*.R$"</span>,</span>
+<span>  packages <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  envir <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/environment.html" class="external-link">globalenv</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  <span class="va">...</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>path</dt>
 <dd><p>Directory containing R files.</p></dd>
+
+
 <dt>pattern</dt>
 <dd><p>File name pattern to search for.</p></dd>
+
+
 <dt>packages</dt>
-<dd><p>Packages to install and load.</p></dd>
+<dd><p>Packages to load.</p></dd>
+
+
+<dt>envir</dt>
+<dd><p>an <span style="R">R</span> object specifying the environment in which the
+    expressions are to be evaluated.  May also be a list or an integer.
+    The default <code><a href="https://rdrr.io/r/base/environment.html" class="external-link">baseenv</a>()</code> corresponds to evaluation in the base
+    environment.  This is probably not what you want; you should
+    typically supply an explicit <code>envir</code> argument, see the
+    ‘Note’.</p></dd>
+
+
 <dt>...</dt>
-<dd><p>Additional arguments passed to <a href="https://rdrr.io/r/base/source.html" class="external-link">source</a>.</p></dd>
+<dd><p>Additional arguments passed to <a href="https://rdrr.io/r/base/sys.source.html" class="external-link">sys.source</a>.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>Null</p>
+    
+
+<p>Null</p>
     </div>
 
   </div>
@@ -107,7 +131,7 @@ but is much slower).</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.9000.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.9000.</p>
 </div>
 
       </footer></div>
