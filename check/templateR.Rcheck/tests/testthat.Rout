@@ -1,0 +1,47 @@
+
+R version 4.2.1 (2022-06-23) -- "Funny-Looking Kid"
+Copyright (C) 2022 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> desc_path <- list.files("../","^DESCRIPTION$",
++                         full.names = TRUE, recursive = TRUE)[1]
+> pkg <- read.dcf(desc_path, fields = "Package")[1]
+> library(testthat)
+> library(pkg, character.only = TRUE)
+> 
+> test_check(pkg)
+Hello world
+Loading required package: dplyr
+
+Attaching package: 'dplyr'
+
+The following object is masked from 'package:testthat':
+
+    matches
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+No files found to source.
+[ FAIL 0 | WARN 0 | SKIP 0 | PASS 6 ]
+> 
+> proc.time()
+   user  system elapsed 
+  0.577   0.096   0.570 

@@ -1,0 +1,15 @@
+citHeader("If you use this package, please cite:")
+
+citEntry(
+  entry    = "Article",
+  title    = "articleTitle",
+  author   = "author1, author2, author3",
+  journal  = "journalName",
+  year     = "publicationYear",
+  volume   = "volume",
+  number   = "number",
+  pages    = "pages",
+  url      = "linkToPublication",
+  textVersion = paste("author1, author2, author3 (publicationYear) articleTitle, *journalName*; volumeNumber, [linkToPublication](linkToPublication)"
+  )
+)
