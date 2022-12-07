@@ -15,7 +15,6 @@ BugReports: https://github.com/neurogenomics/templateR/issues
 Encoding: UTF-8
 Depends: R (>= 4.2)
 biocViews:
-    Genetics, FunctionalGenomics, SystemsBiology
 Imports:
     methods
 Suggests:
