@@ -24,7 +24,7 @@ library(pkg, character.only = TRUE)
 ## Docker containers must be lowercase
 pkg <- tolower(pkg)
 #### Username of DockerHub account ####
-docker_org <- "neurogenomicslab"
+docker_org <- params$docker_org
 ```
 
 # DockerHub 
