@@ -7,6 +7,9 @@ output:
     md_extensions: [ 
       "-autolink_bare_uris" 
     ]
+params:
+  docker_user: 
+    value: "neurogenomicslab"
 vignette: >
     %\VignetteIndexEntry{docker} 
     %\usepackage[utf8]{inputenc}
@@ -21,7 +24,7 @@ library(pkg, character.only = TRUE)
 ## Docker containers must be lowercase
 pkg <- tolower(pkg)
 #### Username of DockerHub account ####
-docker_user <- "neurogenomicslab"
+docker_user <- params$docker_user
 ```
 
 # DockerHub 
