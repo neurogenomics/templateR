@@ -30,7 +30,7 @@ Suggests:
     hexSticker,
     utils,
     rlang
-RoxygenNote: 7.2.2
+RoxygenNote: 7.2.3
 VignetteBuilder: knitr
 License: GPL-3
 Config/testthat/edition: 3

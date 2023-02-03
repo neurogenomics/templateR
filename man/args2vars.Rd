@@ -10,7 +10,7 @@ args_return <- templateR:::args2vars(fn = utils::packageDate)
 }
 }
 \usage{
-args2vars(fn, remove = FALSE, envir = .GlobalEnv)
+args2vars(fn, remove = FALSE, envir = .GlobalEnv, run_source_all = TRUE, ...)
 }
 \arguments{
 \item{fn}{The function for which you want to convert its default
@@ -21,6 +21,16 @@ assigned by \code{args2vars} (if supplying the same \code{fn} as before).
 If the global does not exist, it will be skipped.}
 
 \item{envir}{the \code{\link[base]{environment}} to use.  See \sQuote{Details}.}
+
+\item{run_source_all}{Source all R scripts first.}
+
+\item{...}{
+  Arguments passed on to \code{\link[=source_all]{source_all}}
+  \describe{
+    \item{\code{path}}{Directory containing R files.}
+    \item{\code{pattern}}{File name pattern to search for.}
+    \item{\code{packages}}{Packages to load.}
+  }}
 }
 \value{
 A named list with each argument's default value, or simply a

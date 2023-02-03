@@ -15,7 +15,7 @@
 #' 
 #' @return Null 
 #' @keywords internal
-source_all <- function(path="R/",
+source_all <- function(path="R",
                        pattern="*.R$",
                        packages = NULL, 
                        envir = globalenv(),

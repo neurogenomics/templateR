@@ -5,7 +5,7 @@
 \title{Source all functions}
 \usage{
 source_all(
-  path = "R/",
+  path = "R",
   pattern = "*.R$",
   packages = NULL,
   envir = globalenv(),

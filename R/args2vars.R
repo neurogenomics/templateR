@@ -11,7 +11,9 @@
 #' @param remove If \code{TRUE}, will remove globals 
 #' assigned by \code{args2vars} (if supplying the same \code{fn} as before).
 #' If the global does not exist, it will be skipped.
+#' @param run_source_all Source all R scripts first.
 #' @inheritParams base::assign
+#' @inheritDotParams source_all
 #'
 #' @keywords internal
 #' @importFrom methods is show
@@ -24,9 +26,12 @@
 #' }
 args2vars <- function(fn, 
                       remove = FALSE, 
-                      envir = .GlobalEnv){
+                      envir = .GlobalEnv,
+                      run_source_all = TRUE,
+                      ...){
     requireNamespace("rlang") 
     
+    if(isTRUE(run_source_all)) source_all(...)
     argument_list <- rlang::fn_fmls(fn = fn)
     args_return <- lapply(names(argument_list), function(arg){
         if(remove){
