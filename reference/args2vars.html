@@ -68,7 +68,7 @@ for a function while editing its internal code.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">args2vars</span><span class="op">(</span><span class="va">fn</span>, remove <span class="op">=</span> <span class="cn">FALSE</span>, envir <span class="op">=</span> <span class="va">.GlobalEnv</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">args2vars</span><span class="op">(</span><span class="va">fn</span>, remove <span class="op">=</span> <span class="cn">FALSE</span>, envir <span class="op">=</span> <span class="va">.GlobalEnv</span>, run_source_all <span class="op">=</span> <span class="cn">TRUE</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="source">
@@ -93,6 +93,24 @@ If the global does not exist, it will be skipped.</p></dd>
 
 <dt>envir</dt>
 <dd><p>the <code><a href="https://rdrr.io/r/base/environment.html" class="external-link">environment</a></code> to use.  See ‘Details’.</p></dd>
+
+
+<dt>run_source_all</dt>
+<dd><p>Source all R scripts first.</p></dd>
+
+
+<dt>...</dt>
+<dd><p>Arguments passed on to <code><a href="source_all.html">source_all</a></code></p><dl><dt><code>path</code></dt>
+<dd><p>Directory containing R files.</p></dd>
+
+    <dt><code>pattern</code></dt>
+<dd><p>File name pattern to search for.</p></dd>
+
+    <dt><code>packages</code></dt>
+<dd><p>Packages to load.</p></dd>
+
+  
+</dl></dd>
 
 </dl></div>
     <div id="value">
