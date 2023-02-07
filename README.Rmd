@@ -1,12 +1,6 @@
 ---
-title: ""  
-author: "<img src='`r read.dcf('DESCRIPTION', fields = 'URL')[1]`/raw/`r gsub('[*] ','',system('git branch', intern = TRUE)[1])`/inst/hex/hex.png' height='300'><br><br>
-        `r badger::badge_github_version(color = 'black')` 
-        `r badger::badge_github_actions(action = 'rworkflows')`
-        `r badger::badge_last_commit()`
-        `r badger::badge_codecov()` 
-        `r badger::badge_license()` 
-        <h4>Authors: <i>`r auths <- eval(parse(text = gsub('person','c',read.dcf('DESCRIPTION', fields = 'Authors@R'))));paste(auths[names(auths)=='given'],auths[names(auths)=='family'], collapse = ', ')`</i></h4>" 
+title: "`r rworkflows::get_description()$Package`"  
+author: "`r rworkflows::use_badges()`" 
 date: "<h4>README updated: <i>`r format( Sys.Date(), '%b-%d-%Y')`</i></h4>"
 output:
   github_document
@@ -42,7 +36,7 @@ Before pushing changes to your new R package,
 you will need to add two [GitHub Secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets):  
 
 1. `PAT_GITHUB`: Speeds up installations and gives access to private repos on GitHub Actions. You can generate your very own Personal Authentication Token using [these instructions](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).  
-2. `CODECOV_TOKEN`: Allows [code coverage](https://app.codecov.io/) results to be displayed via the `badger::badge_codecov()` at the top of the *README.Rmd*. This [Codecov](https://app.codecov.io/) token is repository-specific and can be found [here](https://app.codecov.io/gh/`r owner`/`r pkg`). 
+2. `CODECOV_TOKEN`: Allows [code coverage](https://app.codecov.io/) results to be displayed via the `rworkflows::use_badges()` at the top of the *README.Rmd*. This [Codecov](https://app.codecov.io/) token is repository-specific and can be found [here](https://app.codecov.io/gh/`r owner`/`r pkg`). 
 3. `DOCKER_TOKEN`: Allows GitHub Actions to push to the [neurogenomicslab DockerHub](https://hub.docker.com/orgs/neurogenomicslab) account. Ask a fellow [Neurogenomics Lab](https://www.neurogenomics.co.uk/) member for this token.  
 
 

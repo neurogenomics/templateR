@@ -16,18 +16,16 @@ Encoding: UTF-8
 Depends: R (>= 4.2)
 biocViews:
 Imports:
-    methods
 Suggests:
+    rworkflows,
+    methods,
     markdown,
     rmarkdown,
-    magick,
     remotes,
     knitr,
     BiocStyle,
     covr,
     testthat (>= 3.0.0),
-    badger,
-    hexSticker,
     utils,
     rlang
 RoxygenNote: 7.2.3

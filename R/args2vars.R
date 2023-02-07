@@ -15,8 +15,7 @@
 #' @inheritParams base::assign
 #' @inheritDotParams source_all
 #'
-#' @keywords internal
-#' @importFrom methods is show
+#' @keywords internal 
 #' @returns A named list with each argument's default value, or simply a
 #' \link[base]{stop} function declaring "No default".
 #' @source
@@ -30,19 +29,21 @@ args2vars <- function(fn,
                       run_source_all = TRUE,
                       ...){
     requireNamespace("rlang") 
+    requireNamespace("methods")
+    # templateR:::args2vars(args2vars)
     
     if(isTRUE(run_source_all)) source_all(...)
     argument_list <- rlang::fn_fmls(fn = fn)
     args_return <- lapply(names(argument_list), function(arg){
+        # message("Processing arg: ",arg)
         if(remove){
             message("Removing global: ",arg)
             if(exists(arg, envir = envir)){
                 rm(list = arg, pos = envir, envir = envir)
             }
-        } else {
-            message("Assigning global ->> ",arg)
         } 
         #### Parse arguments ####
+        stop_func <- function(){stop("No default")}
         arg_final <- tryCatch({
             arg_out <- argument_list[[arg]]
             if(methods::is(arg_out,"call")){
@@ -51,24 +52,36 @@ args2vars <- function(fn,
                 }, error = function(e) arg_out)
             }
             arg_out
-        }, error = function(e) function(){stop("No default")})
+        }, error = function(e){stop_func})
         #### Assign global ####
         if(remove){ 
             if(exists(arg, envir = envir)) {
                 warning("Global removal failed.") 
             }
-        } else {
-            assign(x = arg,
-                   value = arg_final,
-                   pos = .GlobalEnv,
-                   envir = .GlobalEnv)
-            if(!exists(arg, envir = envir)) {
-                warning("Global assignment failed.")
-            }
+        } else if(identical(arg_final, stop_func)){
+            message("Skipping arg without default: ",arg)
+        } else{ 
+            output <- tryCatch({eval(arg_final)}, 
+                               error=function(e){paste(e)})
+            if(is.character(output) &&
+               length(output)==1 &&
+               grepl("^Error",output) &&
+               grepl("not found\n$",output) ){
+                message("Skipping arg without default: ",arg)
+            } else {
+                message("Assigning global ->> ",arg)
+                assign(x = arg,
+                       value = output,
+                       pos = .GlobalEnv,
+                       envir = .GlobalEnv)
+                if(!exists(arg, envir = envir)) {
+                    warning("Global assignment failed.")
+                }
+            }  
         } 
         return(arg_final)
     })
     names(args_return) <- names(argument_list)
-    methods::show(args_return)
+    # methods::show(args_return)
     return(args_return)
 }

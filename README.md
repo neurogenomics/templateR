@@ -1,13 +1,14 @@
-<img src='https://github.com/neurogenomics/templateR/raw/master/inst/hex/hex.png' height='300'><br><br>
+<img src= 'https://github.com/neurogenomics/templateR/raw/master/inst/hex/hex.png' height= '300' ><br><br><br><br>
 [![](https://img.shields.io/badge/devel%20version-0.99.0-black.svg)](https://github.com/neurogenomics/templateR)
 [![R build
 status](https://github.com/neurogenomics/templateR/workflows/rworkflows/badge.svg)](https://github.com/neurogenomics/templateR/actions)
 [![](https://img.shields.io/github/last-commit/neurogenomics/templateR.svg)](https://github.com/neurogenomics/templateR/commits/master)
-[![](https://app.codecov.io/gh/neurogenomics/templateR/branch/master/graph/badge.svg)](https://app.codecov.io/gh/neurogenomics/templateR)
+[![](https://img.shields.io/github/languages/code-size/neurogenomics/templateR.svg)](https://github.com/neurogenomics/templateR)
+[![](https://codecov.io/gh/neurogenomics/templateR/branch/master/graph/badge.svg)](https://codecov.io/gh/neurogenomics/templateR)
 [![License:
 GPL-3](https://img.shields.io/badge/license-GPL--3-blue.svg)](https://cran.r-project.org/web/licenses/GPL-3)
 ¶ <h4> ¶ Authors: <i>yourGivenName yourFamilyName</i> ¶ </h4>
-<h4> ¶ README updated: <i>Dec-22-2022</i> ¶ </h4>
+<h4> ¶ README updated: <i>Feb-07-2023</i> ¶ </h4>
 
 <!-- To modify Package/Title/Description/Authors fields, edit the DESCRIPTION file -->
 
@@ -51,9 +52,9 @@ Secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets):
     Authentication Token using [these
     instructions](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).  
 2.  `CODECOV_TOKEN`: Allows [code coverage](https://app.codecov.io/)
-    results to be displayed via the `badger::badge_codecov()` at the top
-    of the *README.Rmd*. This [Codecov](https://app.codecov.io/) token
-    is repository-specific and can be found
+    results to be displayed via the `rworkflows::use_badges()` at the
+    top of the *README.Rmd*. This [Codecov](https://app.codecov.io/)
+    token is repository-specific and can be found
     [here](https://app.codecov.io/gh/neurogenomics/templateR).
 3.  `DOCKER_TOKEN`: Allows GitHub Actions to push to the
     [neurogenomicslab
