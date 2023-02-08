@@ -1,3 +1,5 @@
+templateR
+================
 <img src= 'https://github.com/neurogenomics/templateR/raw/master/inst/hex/hex.png' height= '300' ><br><br><br><br>
 [![](https://img.shields.io/badge/devel%20version-0.99.0-black.svg)](https://github.com/neurogenomics/templateR)
 [![R build
@@ -8,7 +10,7 @@ status](https://github.com/neurogenomics/templateR/workflows/rworkflows/badge.sv
 [![License:
 GPL-3](https://img.shields.io/badge/license-GPL--3-blue.svg)](https://cran.r-project.org/web/licenses/GPL-3)
 ¶ <h4> ¶ Authors: <i>yourGivenName yourFamilyName</i> ¶ </h4>
-<h4> ¶ README updated: <i>Feb-07-2023</i> ¶ </h4>
+<h4> ¶ README updated: <i>Feb-08-2023</i> ¶ </h4>
 
 <!-- To modify Package/Title/Description/Authors fields, edit the DESCRIPTION file -->
 
