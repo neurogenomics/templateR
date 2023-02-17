@@ -13,7 +13,8 @@ pkg <- read.dcf("DESCRIPTION", fields = "Package")[1]
 title <- read.dcf("DESCRIPTION", fields = "Title")[1]
 description <- read.dcf("DESCRIPTION", fields = "Description")[1]
 URL <- read.dcf('DESCRIPTION', fields = 'URL')[1]
-owner <- tolower(strsplit(URL,"/")[[1]][4])
+owner <- strsplit(URL,"/")[[1]][4]
+repo <- strsplit(URL,"/")[[1]][5]
 ```
  
 *\<---(Start of section that can be deleted after forking the template)---\>* 
@@ -65,7 +66,7 @@ If you use ``r pkg``, please cite:
 ```R
 if(!require("remotes")) install.packages("remotes")
 
-remotes::install_github("`r URL`")
+remotes::install_github("`r paste(owner,repo,sep='/')`")
 library(`r pkg`)
 ```
 ## Documentation 

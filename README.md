@@ -8,9 +8,13 @@ status](https://github.com/neurogenomics/templateR/workflows/rworkflows/badge.sv
 [![](https://img.shields.io/github/languages/code-size/neurogenomics/templateR.svg)](https://github.com/neurogenomics/templateR)
 [![](https://codecov.io/gh/neurogenomics/templateR/branch/master/graph/badge.svg)](https://codecov.io/gh/neurogenomics/templateR)
 [![License:
-GPL-3](https://img.shields.io/badge/license-GPL--3-blue.svg)](https://cran.r-project.org/web/licenses/GPL-3)
-¶ <h4> ¶ Authors: <i>yourGivenName yourFamilyName</i> ¶ </h4>
-<h4> ¶ README updated: <i>Feb-08-2023</i> ¶ </h4>
+GPL-3](https://img.shields.io/badge/license-GPL--3-blue.svg)](https://cran.r-project.org/web/licenses/GPL-3)  
+<h4>  
+Authors: <i>yourGivenName yourFamilyName</i>  
+</h4>
+<h4>  
+README updated: <i>Feb-17-2023</i>  
+</h4>
 
 <!-- To modify Package/Title/Description/Authors fields, edit the DESCRIPTION file -->
 
@@ -100,7 +104,7 @@ If you use `templateR`, please cite:
 ``` r
 if(!require("remotes")) install.packages("remotes")
 
-remotes::install_github("https://github.com/neurogenomics/templateR")
+remotes::install_github("neurogenomics/templateR")
 library(templateR)
 ```
 
