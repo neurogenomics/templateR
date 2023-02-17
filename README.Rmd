@@ -71,8 +71,8 @@ library(`r pkg`)
 ```
 ## Documentation 
 
-### [Website](https://`r owner`.github.io/`r pkg`) 
-### [Getting started](https://`r owner`.github.io/`r pkg`/articles/`r pkg`) 
+### [Website](https://`r owner`.github.io/`r repo`) 
+### [Getting started](https://`r owner`.github.io/`r repo`/articles/`r pkg`) 
 
 <hr>
 
