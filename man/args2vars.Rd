@@ -10,7 +10,14 @@ args_return <- templateR:::args2vars(fn = utils::packageDate)
 }
 }
 \usage{
-args2vars(fn, remove = FALSE, envir = .GlobalEnv, run_source_all = TRUE, ...)
+args2vars(
+  fn,
+  remove = FALSE,
+  envir = .GlobalEnv,
+  reassign = FALSE,
+  run_source_all = TRUE,
+  ...
+)
 }
 \arguments{
 \item{fn}{The function for which you want to convert its default
@@ -21,6 +28,9 @@ assigned by \code{args2vars} (if supplying the same \code{fn} as before).
 If the global does not exist, it will be skipped.}
 
 \item{envir}{the \code{\link[base]{environment}} to use.  See \sQuote{Details}.}
+
+\item{reassign}{If a global variable of the same name already exists, 
+reassign its value anyway.}
 
 \item{run_source_all}{Source all R scripts first.}
 
