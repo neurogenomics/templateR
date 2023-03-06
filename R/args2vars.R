@@ -12,6 +12,8 @@
 #' assigned by \code{args2vars} (if supplying the same \code{fn} as before).
 #' If the global does not exist, it will be skipped.
 #' @param run_source_all Source all R scripts first.
+#' @param reassign If a global variable of the same name already exists, 
+#' reassign its value anyway.
 #' @inheritParams base::assign
 #' @inheritDotParams source_all
 #'
@@ -26,6 +28,7 @@
 args2vars <- function(fn, 
                       remove = FALSE, 
                       envir = .GlobalEnv,
+                      reassign = FALSE,
                       run_source_all = TRUE,
                       ...){
     requireNamespace("rlang") 
@@ -54,10 +57,10 @@ args2vars <- function(fn,
             arg_out
         }, error = function(e){stop_func})
         #### Assign global ####
-        if(remove){ 
-            if(exists(arg, envir = envir)) {
-                warning("Global removal failed.") 
-            }
+        if(isTRUE(remove)){ 
+            # if(exists(arg, envir = envir)) {
+            #     warning("Global removal failed.") 
+            # }
         } else if(identical(arg_final, stop_func)){
             message("Skipping arg without default: ",arg)
         } else{ 
@@ -69,14 +72,27 @@ args2vars <- function(fn,
                grepl("not found\n$",output) ){
                 message("Skipping arg without default: ",arg)
             } else {
-                message("Assigning global ->> ",arg)
-                assign(x = arg,
-                       value = output,
-                       pos = .GlobalEnv,
-                       envir = .GlobalEnv)
-                if(!exists(arg, envir = envir)) {
-                    warning("Global assignment failed.")
+                if(exists(arg, envir = envir)){
+                    if(isTRUE(reassign)){
+                        message("Reassigning global ->> ",arg)
+                        assign_global <- TRUE
+                    } else {
+                        message("Using existing global : ",arg)
+                        assign_global <- FALSE
+                    }
+                } else {
+                    message("Assigning global ->> ",arg)
+                    assign_global <- TRUE
                 }
+                if(isTRUE(assign_global)){
+                    assign(x = arg,
+                           value = output,
+                           pos = .GlobalEnv,
+                           envir = .GlobalEnv)
+                } 
+                # if(!exists(arg, envir = envir)) {
+                #     warning("Global assignment failed.")
+                # }
             }  
         } 
         return(arg_final)
