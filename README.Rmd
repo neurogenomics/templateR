@@ -19,6 +19,14 @@ repo <- strsplit(URL,"/")[[1]][5]
  
 *\<---(Start of section that can be deleted after forking the template)---\>* 
 
+## Citation
+
+If you use the `templateR` R package template, 
+or any of the [`rworkflows`](https://github.com/neurogenomics/rworkflows) suite tools,
+please cite:
+
+> Brian M. Schilder, Alan E. Murphy, & Nathan G. Skene (2023) The rworkflows suite: automated continuous integration for quality checking, documentation website creation, and containerised deployment of R packages, Research Square; https://doi.org/10.21203/rs.3.rs-2399015/v1
+
 ## Setup
 
 `templateR` is a template designed to make developing new R packages easy by providing:  

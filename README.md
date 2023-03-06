@@ -1,25 +1,39 @@
 templateR
 ================
-<img src= 'https://github.com/neurogenomics/templateR/raw/master/inst/hex/hex.png' height= '300' ><br><br><br><br>
-[![](https://img.shields.io/badge/devel%20version-0.99.0-black.svg)](https://github.com/neurogenomics/templateR)
-[![R build
-status](https://github.com/neurogenomics/templateR/workflows/rworkflows/badge.svg)](https://github.com/neurogenomics/templateR/actions)
-[![](https://img.shields.io/github/last-commit/neurogenomics/templateR.svg)](https://github.com/neurogenomics/templateR/commits/master)
-[![](https://img.shields.io/github/languages/code-size/neurogenomics/templateR.svg)](https://github.com/neurogenomics/templateR)
-[![](https://codecov.io/gh/neurogenomics/templateR/branch/master/graph/badge.svg)](https://codecov.io/gh/neurogenomics/templateR)
+<img src='https://github.com/neurogenomics/templateR/raw/master/inst/hex/hex.png' title='Hex sticker for templateR' height='300'><br>
 [![License:
-GPL-3](https://img.shields.io/badge/license-GPL--3-blue.svg)](https://cran.r-project.org/web/licenses/GPL-3)  
+GPL-3](https://img.shields.io/badge/license-GPL--3-blue.svg)](https://cran.r-project.org/web/licenses/GPL-3)
+[![](https://img.shields.io/badge/devel%20version-0.99.0-black.svg)](https://github.com/neurogenomics/templateR)
+[![](https://img.shields.io/github/languages/code-size/neurogenomics/templateR.svg)](https://github.com/neurogenomics/templateR)
+[![](https://img.shields.io/github/last-commit/neurogenomics/templateR.svg)](https://github.com/neurogenomics/templateR/commits/master)
+<br> [![R build
+status](https://github.com/neurogenomics/templateR/workflows/rworkflows/badge.svg)](https://github.com/neurogenomics/templateR/actions)
+[![](https://codecov.io/gh/neurogenomics/templateR/branch/master/graph/badge.svg)](https://codecov.io/gh/neurogenomics/templateR)
+<br>
+<a href='https://app.codecov.io/gh/neurogenomics/templateR/tree/master' target='_blank'><img src='https://codecov.io/gh/neurogenomics/templateR/branch/master/graphs/icicle.svg' title='Codecov icicle graph' width='200' height='50' style='vertical-align: top;'></a>  
 <h4>  
 Authors: <i>yourGivenName yourFamilyName</i>  
 </h4>
 <h4>  
-README updated: <i>Feb-17-2023</i>  
+README updated: <i>Mar-06-2023</i>  
 </h4>
 
 <!-- To modify Package/Title/Description/Authors fields, edit the DESCRIPTION file -->
 
 *\<—(Start of section that can be deleted after forking the
 template)—\>*
+
+## Citation
+
+If you use the `templateR` R package template, or any of the
+[`rworkflows`](https://github.com/neurogenomics/rworkflows) suite tools,
+please cite:
+
+> Brian M. Schilder, Alan E. Murphy, & Nathan G. Skene (2023) The
+> rworkflows suite: automated continuous integration for quality
+> checking, documentation website creation, and containerised deployment
+> of R packages, Research Square;
+> <https://doi.org/10.21203/rs.3.rs-2399015/v1>
 
 ## Setup
 
