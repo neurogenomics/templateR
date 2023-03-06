@@ -68,7 +68,14 @@ for a function while editing its internal code.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">args2vars</span><span class="op">(</span><span class="va">fn</span>, remove <span class="op">=</span> <span class="cn">FALSE</span>, envir <span class="op">=</span> <span class="va">.GlobalEnv</span>, run_source_all <span class="op">=</span> <span class="cn">TRUE</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">args2vars</span><span class="op">(</span></span>
+<span>  <span class="va">fn</span>,</span>
+<span>  remove <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  envir <span class="op">=</span> <span class="va">.GlobalEnv</span>,</span>
+<span>  reassign <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  run_source_all <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  <span class="va">...</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="source">
@@ -93,6 +100,11 @@ If the global does not exist, it will be skipped.</p></dd>
 
 <dt>envir</dt>
 <dd><p>the <code><a href="https://rdrr.io/r/base/environment.html" class="external-link">environment</a></code> to use.  See ‘Details’.</p></dd>
+
+
+<dt>reassign</dt>
+<dd><p>If a global variable of the same name already exists, 
+reassign its value anyway.</p></dd>
 
 
 <dt>run_source_all</dt>
