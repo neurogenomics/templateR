@@ -13,7 +13,11 @@
 #' @return Null 
 #' @keywords internal 
 messager <- function(..., v = TRUE, parallel = FALSE) {
-    if(parallel){
+    
+    message_parallel <- function(...) {
+        system(sprintf('echo "%s"', paste0(..., collapse = "")))
+    }
+    if(isTRUE(parallel)){
         if(v) try({message_parallel(...)})
     } else {
         msg <- paste(...)

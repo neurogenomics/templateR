@@ -15,7 +15,7 @@ status](https://github.com/neurogenomics/templateR/workflows/rworkflows/badge.sv
 Authors: <i>yourGivenName yourFamilyName</i>  
 </h4>
 <h4>  
-README updated: <i>Mar-06-2023</i>  
+README updated: <i>Mar-08-2023</i>  
 </h4>
 
 <!-- To modify Package/Title/Description/Authors fields, edit the DESCRIPTION file -->
