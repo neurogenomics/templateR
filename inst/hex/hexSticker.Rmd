@@ -117,11 +117,11 @@ print(stick)
 ```{r} 
 gghex <- 
     hexSticker::ggplot() +
-    hexSticker::geom_hexagon(fill = "white", 
-                             color = ggplot2::alpha("black",.25)) +
+    hexSticker::geom_hexagon(fill = ggplot2::alpha("black",.75), 
+                             color = ggplot2::alpha("white",.5)) +
     hexSticker::geom_pkgname(package = pkg, 
                              size=20, 
-                             color = ggplot2::alpha("black",.5)) +
+                             color = ggplot2::alpha("white",.5)) +
     hexSticker::theme_sticker()  
 
 hexSticker::save_sticker(filename = filename,
