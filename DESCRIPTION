@@ -24,10 +24,8 @@ Suggests:
     remotes,
     knitr,
     BiocStyle,
-    covr,
     testthat (>= 3.0.0),
-    utils,
-    rlang
+    utils
 RoxygenNote: 7.2.3
 VignetteBuilder: knitr
 License: GPL-3
