@@ -1,6 +1,7 @@
 citHeader("If you use this package, please cite:")
 
-citEntry(
+bibentry(
+  bibtype = "Article",
   entry    = "Article",
   title    = "articleTitle",
   author   = "author1, author2, author3",
