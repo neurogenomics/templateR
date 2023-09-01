@@ -60,9 +60,9 @@ The [GitHub Actions](https://docs.github.com/en/actions/learn-github-actions/und
 
 *\<---(End of section that can be deleted after forking the template)---\>* 
 
-## ``r pkg``: `r title`
+## ``r pkg``: `r gsub("\n","",title)`
 
-### `r description`
+### `r gsub("\n","",description)`
  
 If you use ``r pkg``, please cite: 
 
@@ -96,3 +96,12 @@ Imperial College London
 [DockerHub](https://hub.docker.com/orgs/neurogenomicslab)  
 
 <br>
+
+## Session Info
+
+<details>
+```{r}
+utils::sessionInfo()
+```
+</details>
+
