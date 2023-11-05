@@ -15,13 +15,13 @@ status](https://github.com/neurogenomics/templateR/workflows/rworkflows/badge.sv
 Authors: <i>yourGivenName yourFamilyName</i>  
 </h4>
 <h4>  
-README updated: <i>Sep-01-2023</i>  
+README updated: <i>Nov-05-2023</i>  
 </h4>
 
 <!-- To modify Package/Title/Description/Authors fields, edit the DESCRIPTION file -->
 
-*\<—(Start of section that can be deleted after forking the
-template)—\>*
+**\<—⬇️⬇️⬇️(Start of section that can be deleted after forking the
+template)⬇️⬇️⬇️—\>**
 
 ## Citation
 
@@ -53,8 +53,8 @@ easy by providing:
   workflow files that will automatically trigger code checks and pushing
   images to [DockerHub](https://hub-stage.docker.com/) every time you
   make a push to your GitHub repo (from
-  [`r_workflows`](https://github.com/neurogenomics/r_workflows)).
-- **inst/CITATIONS** : Allows users of your package to call
+  [`rworkflows`](https://github.com/neurogenomics/rworkflows)).
+- **inst/CITATION** : Allows users of your package to call
   `citation("<packageName>")`. Also used to auto-populate the
   *README.Rmd*.
 
@@ -63,24 +63,17 @@ at the top right of the `templateR` repo.
 
 ### GitHub Secrets
 
-Before pushing changes to your new R package, you will need to add two
-[GitHub
+To use certain features of `rworkflows`, you may need to set up one or
+more [GitHub
 Secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets):
 
-1.  `PAT_GITHUB`: Speeds up installations and gives access to private
-    repos on GitHub Actions. You can generate your very own Personal
-    Authentication Token using [these
-    instructions](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).  
-2.  `CODECOV_TOKEN`: Allows [code coverage](https://app.codecov.io/)
-    results to be displayed via the `rworkflows::use_badges()` at the
-    top of the *README.Rmd*. This [Codecov](https://app.codecov.io/)
-    token is repository-specific and can be found
-    [here](https://app.codecov.io/gh/neurogenomics/templateR).
-3.  `DOCKER_TOKEN`: Allows GitHub Actions to push to the
-    [neurogenomicslab
-    DockerHub](https://hub.docker.com/orgs/neurogenomicslab) account.
-    Ask a fellow [Neurogenomics Lab](https://www.neurogenomics.co.uk/)
-    member for this token.
+- `PAT_GITHUB` \[Optional\]: Can grant access to private repos on GitHub
+  Actions. You can generate your very own Personal Authentication Token
+  with `usethis::create_github_token()`. See the [GitHub
+  docs](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
+  for details.  
+- `DOCKER_TOKEN` \[Optional\]: Allows GitHub Actions to push to a
+  [DockerHub](https://hub.docker.com) account.
 
 ### GitHub Pages
 
@@ -88,19 +81,13 @@ The [GitHub
 Actions](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions)
 workflows included in this template will automatically create a
 documentation website for your package via [GitHub
-Pages](https://pages.github.com/). This requires several initial setup
-steps (you only need to do these once per repo):
+Pages](https://pages.github.com/).
 
-1.  After *check-bioc-docker.yml* has successfully run on Ubuntu for the
-    first, a new branch will appear in your repo called “gh-pages”.  
-2.  In the **Settings** tab of your repo, go to **Pages** on the left.
-    Then under **Source** select `"branch: gh-pages"` and `"root"` from
-    the respective dropdown menus. Finally, click the **Save** button.
+After the **`rworkflows` action** has successfully run on Ubuntu for the
+first time, a new branch will appear in your repo called “gh-pages”.
 
-*Note*: If you don’t have admin access to your repo, you will need to
-ask someone who does to change this for you.
-
-*\<—(End of section that can be deleted after forking the template)—\>*
+**\<—⬆️⬆️⬆️(End of section that can be deleted after forking the
+template)⬆️⬆️⬆️—\>**
 
 ## `templateR`: packageTitle
 
@@ -130,19 +117,6 @@ library(templateR)
 
 <hr>
 
-## Contact
-
-### [Neurogenomics Lab](https://www.neurogenomics.co.uk/)
-
-UK Dementia Research Institute  
-Department of Brain Sciences  
-Faculty of Medicine  
-Imperial College London  
-[GitHub](https://github.com/neurogenomics)  
-[DockerHub](https://hub.docker.com/orgs/neurogenomicslab)
-
-<br>
-
 ## Session Info
 
 <details>
@@ -151,49 +125,39 @@ Imperial College London
 utils::sessionInfo()
 ```
 
-    ## R version 4.2.1 (2022-06-23)
-    ## Platform: x86_64-apple-darwin17.0 (64-bit)
-    ## Running under: macOS Big Sur ... 10.16
+    ## R version 4.3.1 (2023-06-16)
+    ## Platform: aarch64-apple-darwin20 (64-bit)
+    ## Running under: macOS Sonoma 14.1
     ## 
     ## Matrix products: default
-    ## BLAS:   /Library/Frameworks/R.framework/Versions/4.2/Resources/lib/libRblas.0.dylib
-    ## LAPACK: /Library/Frameworks/R.framework/Versions/4.2/Resources/lib/libRlapack.dylib
+    ## BLAS:   /Library/Frameworks/R.framework/Versions/4.3-arm64/Resources/lib/libRblas.0.dylib 
+    ## LAPACK: /Library/Frameworks/R.framework/Versions/4.3-arm64/Resources/lib/libRlapack.dylib;  LAPACK version 3.11.0
     ## 
     ## locale:
     ## [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+    ## 
+    ## time zone: Europe/London
+    ## tzcode source: internal
     ## 
     ## attached base packages:
     ## [1] stats     graphics  grDevices utils     datasets  methods   base     
     ## 
     ## loaded via a namespace (and not attached):
-    ##  [1] here_1.0.1          rprojroot_2.0.3     digest_0.6.31      
-    ##  [4] utf8_1.2.3          BiocFileCache_2.6.1 R6_2.5.1           
-    ##  [7] stats4_4.2.1        RSQLite_2.3.1       evaluate_0.21      
-    ## [10] httr_1.4.6          ggplot2_3.4.2       pillar_1.9.0       
-    ## [13] yulab.utils_0.0.6   rworkflows_0.99.13  biocViews_1.66.3   
-    ## [16] rlang_1.1.1         curl_5.0.0          data.table_1.14.8  
-    ## [19] rstudioapi_0.14     whisker_0.4.1       blob_1.2.4         
-    ## [22] DT_0.28             RUnit_0.4.32        rmarkdown_2.22     
-    ## [25] desc_1.4.2          readr_2.1.4         stringr_1.5.0      
-    ## [28] htmlwidgets_1.6.2   dlstats_0.1.7       BiocPkgTools_1.16.1
-    ## [31] igraph_1.5.0.1      RCurl_1.98-1.12     bit_4.0.5          
-    ## [34] munsell_0.5.0       compiler_4.2.1      xfun_0.39          
-    ## [37] pkgconfig_2.0.3     BiocGenerics_0.44.0 rorcid_0.7.0       
-    ## [40] htmltools_0.5.5     tidyselect_1.2.0    tibble_3.2.1       
-    ## [43] httpcode_0.3.0      XML_3.99-0.14       fansi_1.0.4        
-    ## [46] dplyr_1.1.2         tzdb_0.4.0          dbplyr_2.3.2       
-    ## [49] bitops_1.0-7        rappdirs_0.3.3      crul_1.4.0         
-    ## [52] grid_4.2.1          RBGL_1.74.0         jsonlite_1.8.4     
-    ## [55] gtable_0.3.3        lifecycle_1.0.3     DBI_1.1.3          
-    ## [58] magrittr_2.0.3      scales_1.2.1        graph_1.76.0       
-    ## [61] cli_3.6.1           stringi_1.7.12      cachem_1.0.8       
-    ## [64] renv_0.17.3         fauxpas_0.5.2       xml2_1.3.4         
-    ## [67] rvcheck_0.2.1       filelock_1.0.2      generics_0.1.3     
-    ## [70] vctrs_0.6.2         gh_1.4.0            RColorBrewer_1.1-3 
-    ## [73] tools_4.2.1         bit64_4.0.5         Biobase_2.58.0     
-    ## [76] glue_1.6.2          hms_1.1.3           fastmap_1.1.1      
-    ## [79] yaml_2.3.7          colorspace_2.1-0    BiocManager_1.30.20
-    ## [82] rvest_1.0.3         memoise_2.0.1       badger_0.2.3       
-    ## [85] knitr_1.43
+    ##  [1] gtable_0.3.4        jsonlite_1.8.7      renv_1.0.3         
+    ##  [4] dplyr_1.1.3         compiler_4.3.1      BiocManager_1.30.22
+    ##  [7] tidyselect_1.2.0    rvcheck_0.2.1       scales_1.2.1       
+    ## [10] yaml_2.3.7          fastmap_1.1.1       here_1.0.1         
+    ## [13] ggplot2_3.4.4       R6_2.5.1            generics_0.1.3     
+    ## [16] knitr_1.45          yulab.utils_0.1.0   tibble_3.2.1       
+    ## [19] desc_1.4.2          dlstats_0.1.7       rprojroot_2.0.3    
+    ## [22] munsell_0.5.0       pillar_1.9.0        RColorBrewer_1.1-3 
+    ## [25] rlang_1.1.1         utf8_1.2.4          cachem_1.0.8       
+    ## [28] badger_0.2.3        xfun_0.41           fs_1.6.3           
+    ## [31] memoise_2.0.1.9000  cli_3.6.1           magrittr_2.0.3     
+    ## [34] rworkflows_1.0.0    digest_0.6.33       grid_4.3.1         
+    ## [37] rstudioapi_0.15.0   lifecycle_1.0.3     vctrs_0.6.4        
+    ## [40] data.table_1.14.8   evaluate_0.23       glue_1.6.2         
+    ## [43] fansi_1.0.5         colorspace_2.1-0    rmarkdown_2.25     
+    ## [46] tools_4.3.1         pkgconfig_2.0.3     htmltools_0.5.6.1
 
 </details>
