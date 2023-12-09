@@ -1,13 +1,14 @@
 ---
-title: "Getting Started" 
-author: "<h4>Authors: <i>`r auths <- eval(parse(text = gsub('person','c',read.dcf('../DESCRIPTION', fields = 'Authors@R'))));paste(auths[names(auths)=='given'],auths[names(auths)=='family'], collapse = ', ')`</i></h4>" 
-date: "<h4>Vignette updated: <i>`r format( Sys.Date(), '%b-%d-%Y')`</i></h4>"
-output:
-  BiocStyle::html_document
-vignette: >
-    %\VignetteIndexEntry{Getting Started} 
-    %\usepackage[utf8]{inputenc}
-    %\VignetteEngine{knitr::rmarkdown}
+title: Get started
+author: '<h4>Authors: <i>`r auths <- eval(parse(text = gsub("person","c",read.dcf("../DESCRIPTION",
+  fields = "Authors@R"))));paste(auths[names(auths)=="given"],auths[names(auths)=="family"],
+  collapse = ", ")`</i></h4>'
+date: '<h4>Vignette updated: <i>`r format( Sys.Date(), "%b-%d-%Y")`</i></h4>'
+output: rmarkdown::html_document
+vignette: |
+  %\VignetteIndexEntry{templateR}
+   %\usepackage[utf8]{inputenc}
+  %\VignetteEngine{knitr::rmarkdown}
 ---
 
 

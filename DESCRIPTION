@@ -23,7 +23,6 @@ Suggests:
     rmarkdown,
     remotes,
     knitr,
-    BiocStyle,
     testthat (>= 3.0.0),
     utils
 RoxygenNote: 7.2.3
