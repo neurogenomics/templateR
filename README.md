@@ -15,7 +15,7 @@ status](https://github.com/neurogenomics/templateR/workflows/rworkflows/badge.sv
 Authors: <i>yourGivenName yourFamilyName</i>  
 </h4>
 <h4>  
-README updated: <i>Nov-05-2023</i>  
+README updated: <i>Aug-03-2025</i>  
 </h4>
 
 <!-- To modify Package/Title/Description/Authors fields, edit the DESCRIPTION file -->
@@ -103,9 +103,9 @@ If you use `templateR`, please cite:
 ## Installation
 
 ``` r
-if(!require("remotes")) install.packages("remotes")
+if(!require("BiocManager")) install.packages("BiocManager")
 
-remotes::install_github("neurogenomics/templateR")
+BiocManager::install("neurogenomics/templateR")
 library(templateR)
 ```
 
@@ -125,39 +125,38 @@ library(templateR)
 utils::sessionInfo()
 ```
 
-    ## R version 4.3.1 (2023-06-16)
-    ## Platform: aarch64-apple-darwin20 (64-bit)
-    ## Running under: macOS Sonoma 14.1
+    ## R version 4.4.2 (2024-10-31)
+    ## Platform: aarch64-apple-darwin20
+    ## Running under: macOS Sequoia 15.5
     ## 
     ## Matrix products: default
-    ## BLAS:   /Library/Frameworks/R.framework/Versions/4.3-arm64/Resources/lib/libRblas.0.dylib 
-    ## LAPACK: /Library/Frameworks/R.framework/Versions/4.3-arm64/Resources/lib/libRlapack.dylib;  LAPACK version 3.11.0
+    ## BLAS:   /Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/lib/libRblas.0.dylib 
+    ## LAPACK: /Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.0
     ## 
     ## locale:
     ## [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
     ## 
-    ## time zone: Europe/London
+    ## time zone: America/New_York
     ## tzcode source: internal
     ## 
     ## attached base packages:
     ## [1] stats     graphics  grDevices utils     datasets  methods   base     
     ## 
     ## loaded via a namespace (and not attached):
-    ##  [1] gtable_0.3.4        jsonlite_1.8.7      renv_1.0.3         
-    ##  [4] dplyr_1.1.3         compiler_4.3.1      BiocManager_1.30.22
-    ##  [7] tidyselect_1.2.0    rvcheck_0.2.1       scales_1.2.1       
-    ## [10] yaml_2.3.7          fastmap_1.1.1       here_1.0.1         
-    ## [13] ggplot2_3.4.4       R6_2.5.1            generics_0.1.3     
-    ## [16] knitr_1.45          yulab.utils_0.1.0   tibble_3.2.1       
-    ## [19] desc_1.4.2          dlstats_0.1.7       rprojroot_2.0.3    
-    ## [22] munsell_0.5.0       pillar_1.9.0        RColorBrewer_1.1-3 
-    ## [25] rlang_1.1.1         utf8_1.2.4          cachem_1.0.8       
-    ## [28] badger_0.2.3        xfun_0.41           fs_1.6.3           
-    ## [31] memoise_2.0.1.9000  cli_3.6.1           magrittr_2.0.3     
-    ## [34] rworkflows_1.0.0    digest_0.6.33       grid_4.3.1         
-    ## [37] rstudioapi_0.15.0   lifecycle_1.0.3     vctrs_0.6.4        
-    ## [40] data.table_1.14.8   evaluate_0.23       glue_1.6.2         
-    ## [43] fansi_1.0.5         colorspace_2.1-0    rmarkdown_2.25     
-    ## [46] tools_4.3.1         pkgconfig_2.0.3     htmltools_0.5.6.1
+    ##  [1] gtable_0.3.6        jsonlite_2.0.0      renv_1.1.5         
+    ##  [4] dplyr_1.1.4         compiler_4.4.2      BiocManager_1.30.26
+    ##  [7] tidyselect_1.2.1    dichromat_2.0-0.1   rvcheck_0.2.1      
+    ## [10] scales_1.4.0        yaml_2.3.10         fastmap_1.2.0      
+    ## [13] here_1.0.1          ggplot2_3.5.2       R6_2.6.1           
+    ## [16] generics_0.1.4      knitr_1.50          yulab.utils_0.2.0  
+    ## [19] tibble_3.3.0        desc_1.4.3          dlstats_0.1.7      
+    ## [22] rprojroot_2.1.0     pillar_1.11.0       RColorBrewer_1.1-3 
+    ## [25] rlang_1.1.6         badger_0.2.5        xfun_0.52          
+    ## [28] fs_1.6.6            cli_3.6.5           magrittr_2.0.3     
+    ## [31] rworkflows_1.0.6    digest_0.6.37       grid_4.4.2         
+    ## [34] rstudioapi_0.17.1   lifecycle_1.0.4     vctrs_0.6.5        
+    ## [37] evaluate_1.0.4      glue_1.8.0          data.table_1.17.8  
+    ## [40] farver_2.1.2        rmarkdown_2.29      tools_4.4.2        
+    ## [43] pkgconfig_2.0.3     htmltools_0.5.8.1
 
 </details>
