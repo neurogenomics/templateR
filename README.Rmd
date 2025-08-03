@@ -73,9 +73,9 @@ If you use ``r pkg``, please cite:
 ## Installation 
 
 ```R
-if(!require("remotes")) install.packages("remotes")
+if(!require("BiocManager")) install.packages("BiocManager")
 
-remotes::install_github("`r paste(owner,repo,sep='/')`")
+BiocManager::install("`r paste(owner,repo,sep='/')`")
 library(`r pkg`)
 ```
 ## Documentation 
